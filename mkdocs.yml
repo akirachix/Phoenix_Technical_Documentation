@@ -1,0 +1,71 @@
+
+
+site_name: Pamodzi Technical Documentation
+site_description: Technical Documentation for the Pamodzi Platform
+site_url: https://github.com/akirachix/Phoenix_Technical_Documentation.git
+
+theme:
+  name: material
+  theme:
+  logo: assets/images/logo-assets/pamodzi-mark.png
+  favicon: assets/images/logo-assets/favicon-64.png
+
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+  font:
+    text: Quicksand
+    code: Roboto Mono
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+extra_css:
+  - assets/brand/pamodzi.css
+
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Backend: backend.md
+  - Database: database.md
+  - Braanding: brand.md
+  - Frontend Web: frontend_web.md
+  - Web Dashboard: web-dashboard.md
+  - Mobile App: mobile-app.md
+  - Security: security.md
+  - Deployment: deployment.md
+  - Integrations: inergrations.md
