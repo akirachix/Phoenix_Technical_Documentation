@@ -42,7 +42,8 @@ The backend is a central **FastAPI** service that every client — USSD, mobile 
 
 The backend follows a **repository pattern**: each domain model (`Farmer`, `Cooperative`, `DemandCampaign`, …) has a dedicated repository class (`FarmerRepository`, `CooperativeRepository`, …) that encapsulates all database access for that entity. Routers call repository methods rather than querying the ORM directly, which keeps query logic centralized and testable.
 
-
+## System Architecture Diagram
+   ![Pamodzi](assets/images/logo-assets/sad-backend.png)
 
 ## Project structure
 
