@@ -64,7 +64,7 @@ Pamodzi solves this by letting:
 | Cooperative Agent | Inputs farmer produce details, verifies hub location, manages disbursal | Mobile app |
 | Wholesale Buyer | Creates demand campaigns, funds them, tracks fulfillment | Mobile app |
 | Administrator | Platform oversight, MFA-protected | Desktop PWA |
-![Pamodzi Logo](assets/brand/images/logo.png){ width="120" }
+
 ## Key Features
 
 - **USSD produce listing** — farmers with basic phones can list crops without internet access, via Africa's Talking USSD gateway.

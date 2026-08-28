@@ -1,5 +1,6 @@
 # Getting Started
 
+## Configure Environment Variables
 ## Prerequisites
 
 - Python 3.x (see `.python-version`)

@@ -55,7 +55,7 @@ Pushes to `main` trigger a GitHub Actions workflow that:
 
 1. Checks out the code and sets up Python.
 2. Installs dependencies from `requirements.txt`.
-3. Runs the test/lint step (currently limited — see [Testing & QA](backend.md#testing-qa)).
+3. Runs the test/lint step (currently limited — see [Testing & QA](backend.md)).
 4. Deploys to Heroku using the Heroku CLI/API, authenticated via a `HEROKU_API_KEY` secret stored in the repo's GitHub Actions secrets.
 5. Heroku builds the app and starts it via the `Procfile`'s `web` process.
 

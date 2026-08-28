@@ -2,7 +2,7 @@
 
 site_name: Pamodzi Technical Documentation
 site_description: Technical Documentation for the Pamodzi Platform
-site_url: https://your-username.github.io/Phoenix_Technical_Documentation/
+site_url: https://github.com/akirachix/Phoenix_Technical_Documentation.git
 
 theme:
   name: material
