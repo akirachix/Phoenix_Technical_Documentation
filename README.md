@@ -2,7 +2,7 @@
 
 This repository is the source for Pamodzi's technical documentation site, built with [MkDocs](https://www.mkdocs.org/) and published to GitHub Pages. It's the reference for anyone building on, integrating with, or onboarding onto the Pamodzi platform — an agricultural ecosystem connecting farmers, cooperatives, and wholesale buyers in Zambia.
 
-## What's in here
+## What's  here
 
 The `docs/` folder holds one page per topic, plus the brand and image assets used across the site. Here's what you'll find when you open the published site:
 
