@@ -67,6 +67,7 @@ Walks through how each user (Farmer, Cooperative Agent, Wholesale Buyer,) moves 
 🔗 [User Flow](https://www.figma.com/design/dgHVs6tTxpni0NgIHpLSIE/User-flows?node-id=0-1&t=1JtVKMI9rKiWwUhP-1)
 
 In general,Pamodzi solves this by letting:
+Pamodzi solves this by letting:
 
 - **Wholesale buyers** launch a *demand campaign* — a request for a specific crop, grade, quantity, and province — and fund it up front.
 - **Farmers** list their produce (via USSD, so no smartphone or internet is required) against that demand.
