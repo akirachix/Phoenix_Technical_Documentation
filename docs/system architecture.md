@@ -19,23 +19,22 @@ The applications communicate with the **Pamodzi API**, which communicates with t
 
 ---
 
-## 2. Project Documents and Resources
+## 2. System Architecture
 
-The following resources provide the supporting system architecture, database, and project information.
+The Pamodzi architecture consists of user-facing applications, the Pamodzi API, external APIs, and the database.
+
+![Pamodzi](assets/images/logo-assets/sad-backend.png)
+
+
+
+The following resources provide the supporting system architecture and ERD project information.
 
 🔗 [System Architecture Diagram](https://lucid.app/lucidchart/c05218bb-cec1-4702-8aca-515a6a8bdfc1/edit?viewport_loc=-9273%2C-11611%2C9514%2C6279%2C0_0&invitationId=inv_4e2e83fd-4706-4d12-97f5-ba1d561a441a)
-
-🔗 [Data Model Document](https://docs.google.com/document/d/1XQybjymnVYrOXz7y_ZkNjomQrStWmoba8YM4qL-QWY4/edit?usp=sharing) 
-
 
 🔗 [ERD Document](https://docs.google.com/document/d/17-KdHhf3edFc5MXNn2SJIU5dFrdC0z8ew3zJSTRr51g/edit?usp=sharing)
 
 
-## 3. System Architecture
-
-The Pamodzi architecture consists of user-facing applications, the Pamodzi API, external APIs, and the database.
-
-### 3.1 User-Facing Applications
+### 2.1 User-Facing Applications
 
 The system provides different interfaces depending on the user interacting with the platform.
 
@@ -78,7 +77,7 @@ Through the Mobile App, Wholesale Buyers can:
 
 ---
 
-## 4. Pamodzi APi
+## 3. Pamodzi APi
 
 **Pamodzi API** acts as the central communication point between the user-facing applications, database, and external services.
 
@@ -101,11 +100,11 @@ Pamodzi API also connects the platform with the external **LocationIQ API** and 
 
 ---
 
-## 5. External APIs
+## 4. External APIs
 
 The system architecture identifies three external APIs.
 
-### 5.1 Africa's Talking API
+### 4.1 Africa's Talking API
 
 Africa's Talking API is used in the USSD flow.
 
@@ -121,7 +120,7 @@ The USSD flow provides farmers with a way to interact with the system through th
 
 ---
 
-### 5.2 LocationIQ API
+### 4.2 LocationIQ API
 
 LocationIQ provides location information for cooperative hubs.
 
@@ -137,7 +136,7 @@ The data model represents cooperative hub location information through the `coop
 
 ---
 
-### 5.3 Flutterwave API
+### 4.3 Flutterwave API
 
 Flutterwave is used in the platform's payment flow.
 
@@ -155,7 +154,7 @@ The data model includes the **Merchant Account** and **Payment Transaction** ent
 
 ---
 
-## 6. System Components
+## 5. System Components
 
 | Component | Responsibility |
 |---|---|
@@ -171,11 +170,11 @@ The data model includes the **Merchant Account** and **Payment Transaction** ent
 
 ---
 
-## 7. User Roles
+## 6. User Roles
 
 Pamodzi identifies different users who interact with the platform through different channels.
 
-### 7.1 Farmer
+### 6.1 Farmer
 
 Farmers are smallholder agricultural producers associated with cooperatives.
 
@@ -194,7 +193,7 @@ Farmers interact with the system through **USSD**.
 
 ---
 
-### 7.2 Cooperative Agent
+### 6.2 Cooperative Agent
 
 Cooperative Agents are platform operators associated with cooperatives. They manage intake and quality verification workflows in the field.
 
@@ -211,7 +210,7 @@ Cooperative Agents use the **Mobile App Agent Interface** to provide produce inf
 
 ---
 
-### 7.3 Wholesale Buyer
+### 6.3 Wholesale Buyer
 
 Wholesale Buyers access the platform for large-scale agricultural purchasing.
 
@@ -230,7 +229,7 @@ Wholesale Buyers use the **Mobile App** to create demand campaigns and provide m
 
 ---
 
-### 7.3 Admin
+### 6.4 Admin
 
 Admin access the platform for the whole overview.
 
@@ -246,7 +245,7 @@ Admin use the **Dashboard** to oversee all the operations that are happening in 
 ---
 
 
-## 8. Core System Flow
+## 7. Core System Flow
 
 The main purpose of the system is to connect wholesale demand with farmer supply through cooperatives.
 
