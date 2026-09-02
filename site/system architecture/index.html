@@ -1,0 +1,1420 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical Documentation for the Pamodzi Platform">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/akirachix/Phoenix_Technical_Documentation.git/system%20architecture/">
+      
+      
+        <link rel="prev" href="..">
+      
+      
+        <link rel="next" href="../backend/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo-assets/favicon-64.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>System Architecture - Pamodzi Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Quicksand";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/brand/pamodzi.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pamodzi-system-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-header__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pamodzi Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Architecture
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  System Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../backend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Backend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../frontend_web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mobile-app/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-nav__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    Pamodzi Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-user-facing-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 User-Facing Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussd-and-sms-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USSD and SMS Notification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="USSD and SMS Notification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app-agent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile App Agent Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app-buyers-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile App Buyers Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pamodzi-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pamodzi APi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-external-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. External APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. External APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-africas-talking-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Africa's Talking API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-locationiq-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 LocationIQ API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-flutterwave-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Flutterwave API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-system-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. System Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. User Roles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. User Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-farmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Farmer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-cooperative-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Cooperative Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-wholesale-buyer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Wholesale Buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-core-system-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Core System Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-system-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. System Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. System Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-user-facing-applications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 User-Facing Applications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussd-and-sms-notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        USSD and SMS Notification
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="USSD and SMS Notification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile App
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app-agent-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile App Agent Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-app-buyers-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile App Buyers Interface
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pamodzi-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Pamodzi APi
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-external-apis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. External APIs
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. External APIs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-africas-talking-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 Africa's Talking API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-locationiq-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 LocationIQ API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-flutterwave-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Flutterwave API
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-system-components" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. System Components
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-user-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. User Roles
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="6. User Roles">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-farmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.1 Farmer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-cooperative-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.2 Cooperative Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-wholesale-buyer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.3 Wholesale Buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#64-admin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6.4 Admin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-core-system-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Core System Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pamodzi-system-documentation">Pamodzi System Documentation</h1>
+<h2 id="1-system-overview">1. System Overview</h2>
+<p>Pamodzi is an aggregator platform designed to streamline the smallholder agricultural supply chain in Zambia. The system connects commercial wholesale buyers with smallholder farmers who are organized through agricultural cooperatives.</p>
+<p>The platform provides a structured way to capture farmer and cooperative information, record available produce, receive wholesale demand, aggregate produce against demand campaigns, and record payment activity.</p>
+<p>The Pamodzi data model is based on a relational database structure. Entities are represented as tables and are connected through primary and foreign keys to maintain relationships and data integrity.</p>
+<p>The system is designed around the different ways its users interact with the platform:</p>
+<ul>
+<li><strong>Farmers</strong> interact through <strong>USSD</strong>.</li>
+<li><strong>Cooperative Agents</strong> interact through the <strong>Mobile App</strong>.</li>
+<li><strong>Wholesale Buyers</strong> interact through the <strong>Mobile App</strong>.</li>
+<li><strong>System Admin</strong> interact through the <strong>Dashboard</strong>.</li>
+</ul>
+<p>The applications communicate with the <strong>Pamodzi API</strong>, which communicates with the database and the required external services.</p>
+<hr />
+<h2 id="2-system-architecture">2. System Architecture</h2>
+<p>The Pamodzi architecture consists of user-facing applications, the Pamodzi API, external APIs, and the database.</p>
+<p><img alt="Pamodzi" src="../assets/images/logo-assets/sad-backend.png" /></p>
+<p>The following resources provide the supporting system architecture and ERD project information.</p>
+<p>🔗 <a href="https://lucid.app/lucidchart/c05218bb-cec1-4702-8aca-515a6a8bdfc1/edit?viewport_loc=-9273%2C-11611%2C9514%2C6279%2C0_0&amp;invitationId=inv_4e2e83fd-4706-4d12-97f5-ba1d561a441a">System Architecture Diagram</a></p>
+<p>🔗 <a href="https://docs.google.com/document/d/17-KdHhf3edFc5MXNn2SJIU5dFrdC0z8ew3zJSTRr51g/edit?usp=sharing">ERD Document</a></p>
+<h3 id="21-user-facing-applications">2.1 User-Facing Applications</h3>
+<p>The system provides different interfaces depending on the user interacting with the platform.</p>
+<h3 id="ussd-and-sms-notification">USSD and SMS Notification</h3>
+<p>The USSD interface is used by <strong>Farmers</strong> to interact with the system.</p>
+<p>Through USSD, farmers can:</p>
+<ul>
+<li>list available produce;</li>
+<li>Update their listings; </li>
+<li>Update their pin number;</li>
+<li>receive success messages and responses.</li>
+</ul>
+<p>The architecture shows produce details being sent through the USSD flow and a response being returned to the farmer.</p>
+<h4 id="mobile-app">Mobile App</h4>
+<h3 id="mobile-app-agent-interface">Mobile App Agent Interface</h3>
+<p>The Mobile App is used by <strong>Cooperative Agents</strong>.</p>
+<p>Through the Mobile App, Cooperative Agents can:</p>
+<ul>
+<li>input demand campaign details and hub location;</li>
+<li>input farmer produce details and hub location;</li>
+<li>view success messages; and</li>
+<li>receive produce verification results.</li>
+</ul>
+<h3 id="mobile-app-buyers-interface">Mobile App Buyers Interface</h3>
+<p>The Mobile App is used by <strong>Wholesale Buyers</strong>.</p>
+<p>Through the Mobile App, Wholesale Buyers can:</p>
+<ul>
+<li>create demand campaigns;</li>
+<li>receive campaign and payment status information;</li>
+<li>recieve messages to extend demand campaign timeline;</li>
+<li>view market prices for the different crops the platform deals with.</li>
+</ul>
+<hr />
+<h2 id="3-pamodzi-api">3. Pamodzi APi</h2>
+<p><strong>Pamodzi API</strong> acts as the central communication point between the user-facing applications, database, and external services.</p>
+<p>It handles communication involving:</p>
+<ul>
+<li>produce information;</li>
+<li>demand campaign information;</li>
+<li>cooperative information;</li>
+<li>cooperative hub location information;</li>
+<li>database requests and responses;</li>
+<li>payment-related information; </li>
+<li>merchant account information;</li>
+<li>produce pool information;</li>
+<li>user details;</li>
+<li>status responses.</li>
+</ul>
+<p>The architecture shows Pamodzi API sending requests to and receiving responses from the database.</p>
+<p>Pamodzi API also connects the platform with the external <strong>LocationIQ API</strong> and <strong>Flutterwave API</strong>, while the USSD flow uses the <strong>Africa's Talking API</strong>.</p>
+<hr />
+<h2 id="4-external-apis">4. External APIs</h2>
+<p>The system architecture identifies three external APIs.</p>
+<h3 id="41-africas-talking-api">4.1 Africa's Talking API</h3>
+<p>Africa's Talking API is used in the USSD flow.</p>
+<p>The interaction follows this process:</p>
+<ol>
+<li>The farmer interacts with USSD.</li>
+<li>The farmer provides produce details.</li>
+<li>A USSD request is sent through the Africa's Talking API.</li>
+<li>A USSD response is returned.</li>
+<li>The farmer receives the relevant response or success message.</li>
+</ol>
+<p>The USSD flow provides farmers with a way to interact with the system through their feature phones.</p>
+<hr />
+<h3 id="42-locationiq-api">4.2 LocationIQ API</h3>
+<p>LocationIQ provides location information for cooperative hubs.</p>
+<p>The location flow is:</p>
+<ol>
+<li>Cooperative hub location information is entered through the Mobile App.</li>
+<li>A location request is sent.</li>
+<li>The LocationIQ API returns a location response.</li>
+<li>The location information is handled through the Pamodzi API.</li>
+<li>The location information is stored in the database.</li>
+</ol>
+<p>The data model represents cooperative hub location information through the <code>cooperative</code> entity.</p>
+<hr />
+<h3 id="43-flutterwave-api">4.3 Flutterwave API</h3>
+<p>Flutterwave is used in the platform's payment flow.</p>
+<p>The architecture shows the following process:</p>
+<ol>
+<li>A Wholesale Buyer creates a demand campaign.</li>
+<li>Mobile money details are provided.</li>
+<li>Campaign and mobile money details are sent to the demand campaign creation and merchant account funding process.</li>
+<li>A charge is initiated.</li>
+<li>A transfer success notification is received.</li>
+<li>The ledger/database is updated.</li>
+<li>A success status is returned.</li>
+</ol>
+<p>The data model includes the <strong>Merchant Account</strong> and <strong>Payment Transaction</strong> entities for recording financial information associated with this flow.</p>
+<hr />
+<h2 id="5-system-components">5. System Components</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Responsibility</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>USSD</strong></td>
+<td>Provides the Farmer interaction channel for listing produce and receiving responses.</td>
+</tr>
+<tr>
+<td><strong>Dashboard</strong></td>
+<td>Provides the Admin interaction channel to view all the demand campaigns launched, produce listed, financial transactions and produce aggregated and the market price for the 4 crops dealt with.</td>
+</tr>
+<tr>
+<td><strong>Mobile APP Agent Interface</strong></td>
+<td>Provides the Cooperative Agent interaction channel for produce, demand campaign, hub location, and verification activities.</td>
+</tr>
+<tr>
+<td><strong>Mobile APP Buyers Interface</strong></td>
+<td>Provides the Wholesale Buyer interaction channel for demand campaign creation and financial transaction and demand campaign information.</td>
+</tr>
+<tr>
+<td><strong>Pamodzi API</strong></td>
+<td>Connects applications with the database and external APIs.</td>
+</tr>
+<tr>
+<td><strong>Africa's Talking API</strong></td>
+<td>Supports the USSD request and response flow.</td>
+</tr>
+<tr>
+<td><strong>LocationIQ API</strong></td>
+<td>Provides cooperative hub location information.</td>
+</tr>
+<tr>
+<td><strong>Flutterwave API</strong></td>
+<td>Supports the payment and merchant account funding flow.</td>
+</tr>
+<tr>
+<td><strong>Database</strong></td>
+<td>Stores structured platform information including users, cooperatives, produce, demand campaigns, accounts, and payments.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="6-user-roles">6. User Roles</h2>
+<p>Pamodzi identifies different users who interact with the platform through different channels.</p>
+<h3 id="61-farmer">6.1 Farmer</h3>
+<p>Farmers are smallholder agricultural producers associated with cooperatives.</p>
+<p>Farmer information is obtained from the cooperative when the farmer is onboarded.</p>
+<p>The Farmer entity contains:</p>
+<ul>
+<li><code>farmer_id</code></li>
+<li><code>user_id</code></li>
+<li><code>cooperative_id</code></li>
+<li><code>is_verified</code></li>
+</ul>
+<p>Farmers' produce is recorded through the <strong>Produce Listing</strong> entity.</p>
+<p>Farmers interact with the system through <strong>USSD</strong>.</p>
+<hr />
+<h3 id="62-cooperative-agent">6.2 Cooperative Agent</h3>
+<p>Cooperative Agents are platform operators associated with cooperatives. They manage intake and quality verification workflows in the field.</p>
+<p>The Cooperative Agent entity contains:</p>
+<ul>
+<li><code>agent_id</code></li>
+<li><code>user_id</code></li>
+<li><code>cooperative_id</code></li>
+<li><code>staff_id</code></li>
+<li><code>registered_at</code></li>
+<li><code>agent_status</code></li>
+</ul>
+<p>Cooperative Agents use the <strong>Mobile App Agent Interface</strong> to provide produce information, hub location information, demand campaign information, and receive verification results.</p>
+<hr />
+<h3 id="63-wholesale-buyer">6.3 Wholesale Buyer</h3>
+<p>Wholesale Buyers access the platform for large-scale agricultural purchasing.</p>
+<p>The Wholesale Buyer entity contains:</p>
+<ul>
+<li><code>buyer_id</code></li>
+<li><code>user_id</code></li>
+<li><code>password_hash</code></li>
+<li><code>email</code></li>
+<li><code>company_name</code></li>
+<li><code>created_at</code></li>
+<li><code>pacra_number</code></li>
+<li><code>tax_clearance_number</code></li>
+</ul>
+<p>Wholesale Buyers use the <strong>Mobile App</strong> to create demand campaigns and provide mobile money information.</p>
+<hr />
+<h3 id="64-admin">6.4 Admin</h3>
+<p>Admin access the platform for the whole overview.</p>
+<p>The Admin entity contains:</p>
+<ul>
+<li><code>user_id</code></li>
+<li><code>password_hash</code></li>
+<li><code>email</code></li>
+<li><code>created_at</code></li>
+</ul>
+<p>Admin use the <strong>Dashboard</strong> to oversee all the operations that are happening in the platform .</p>
+<hr />
+<h2 id="7-core-system-flow">7. Core System Flow</h2>
+<p>The main purpose of the system is to connect wholesale demand with farmer supply through cooperatives.</p>
+<p>The high-level flow is:</p>
+<p>```text
+Wholesale Buyer
+   |
+   | Mobile App
+   v
+Launch Demand Campaign
+   |
+   v
+Pamodzi API
+   |
+   v
+Database
+   |
+   v
+Produce listing
+   |
+   v
+Produce Pool
+   |
+   v
+Produce Aggregation
+   |
+   v
+Wholesale Buyer</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href=".." class="md-footer__link md-footer__link--prev" aria-label="Previous: Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../backend/" class="md-footer__link md-footer__link--next" aria-label="Next: Backend">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Backend
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

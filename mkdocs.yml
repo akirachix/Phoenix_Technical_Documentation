@@ -13,6 +13,11 @@ theme:
   features:
     - navigation.instant
     - navigation.tracking
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
@@ -58,14 +63,10 @@ extra_css:
   - assets/brand/pamodzi.css
 
 nav:
-  - Home: index.md
-  - Getting Started: getting-started.md
+  -   Overview: index.md
+  - System Architecture : system architecture.md
   - Backend: backend.md
   - Database: database.md
-  - Braanding: brand.md
   - Frontend Web: frontend_web.md
-  - Web Dashboard: web-dashboard.md
   - Mobile App: mobile-app.md
-  - Security: security.md
-  - Deployment: deployment.md
-  - Integrations: inergrations.md
+  
