@@ -43,7 +43,7 @@ Pamodzi is an agricultural ecosystem platform that connects farmers, cooperative
 
     ---
 
-    Role-based access for Farmer, Agent, Buyer, and Admin, with mandatory MFA for admins. See [Security](security.md).
+    Role-based access for Farmer, Agent, Buyer, and Admin, with mandatory MFA for admins. 
 
 </div>
 
@@ -214,7 +214,7 @@ All flows converge on a central Main API, which is the only component that reads
 
 ### Data Flow Summary
 
-Every external actor (farmer, agent, buyer) talks to the Main API through a client interface (USSD / Mobile app / Desktop PWA) — **never** directly to the database or to third-party services. The Main API is the single integration point for Africa's Talking, LocationIQ, and Flutterwave, and the single writer to PostgreSQL. This centralization is what the [RBAC and audit model](security.md) relies on.
+Every external actor (farmer, agent, buyer) talks to the Main API through a client interface (USSD / Mobile app / Desktop PWA) — **never** directly to the database or to third-party services. The Main API is the single integration point for Africa's Talking, LocationIQ, and Flutterwave, and the single writer to PostgreSQL. This centralization is what the [RBAC and audit model] security relies on.
 
 See [Backend](backend.md), [Database](database.md), [Frontend Web](frontend_web.md), and [Mobile App](mobile-app.md) for component-level detail.
 
@@ -232,7 +232,7 @@ See [Backend](backend.md), [Database](database.md), [Frontend Web](frontend_web.
 | PACRA | Patents and Companies Registration Agency (Zambia) — buyers provide a PACRA number as a business registration identifier |
 | NRC | National Registration Card (Zambia) — used as a unique identity field on `user` |
 | RBAC | Role-Based Access Control |
-| JWT | JSON Web Token — see [Security](security.md#authentication-authorization) for the signing algorithm used |
+| JWT | JSON Web Token md#authentication-authorization) for the signing algorithm used |
 | Argon2 | Password hashing algorithm used for all stored credentials |
 | ZMW | Zambian Kwacha, the default transaction currency |
 | Merchant Account / Wallet | Platform-held Flutterwave account that funds pass through before payout |

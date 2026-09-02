@@ -123,9 +123,9 @@ Quick sanity check after starting both:
 Other scripts you'll use:
 
 ```bash
-npm run build      # production build — run this before opening a PR that touches many files
-npm run lint        # ESLint, per the flat config in eslint.config.mjs
-npm run start       # serve the production build locally
+npm run build      
+npm run lint       
+npm run start      
 ```
 
 ---
@@ -194,7 +194,7 @@ Per-crop price cards (ZMW/50kg) above a multi-line trend chart with a color-code
 Every route nested under `app/dashboard/` gets wrapped by this layout.
 
 ```jsx
-// app/dashboard/layout.jsx
+
 import Sidebar from "@/components/dashboard/Sidebar";
 import TopBar from "@/components/dashboard/TopBar";
 import styles from "./layout.module.css";
@@ -217,7 +217,7 @@ If you build a new page *outside* `app/dashboard/` (like `Home` or `login`) it w
 ### 9.2 A new dashboard page
 
 ```jsx
-// app/dashboard/example-feature/page.jsx
+
 import styles from "./page.module.css";
 
 export default function ExampleFeaturePage() {
@@ -285,7 +285,7 @@ import styles from "./financecard.css";
 
 export default async function FinanceCardPage({ params }) {
   const { id } = await params;
-  const record = await apiGet(`/finance/${id}`); // confirm actual endpoint shape with backend team
+  const record = await apiGet(`/finance/${id}`); 
 
   return (
     <div className={styles.card}>
@@ -366,7 +366,7 @@ The frontend deploys to **Vercel**, connected to the `Phoenix_Dashboard` repo, a
 
 # Frontend Web
 
-The admin-facing web dashboard ("Phoenix Dashboard") is a Next.js application used by Administrators to manage all ongoing activity on the platform. For the page-by-page breakdown of the dashboard, see [Web Dashboard](web-dashboard.md).
+The admin-facing web dashboard ("Phoenix Dashboard") is a Next.js application used by Administrators to manage all ongoing activity on the platform. For the page-by-page breakdown of the dashboard.
 
 ## Tech Stack
 
@@ -390,4 +390,3 @@ The admin-facing web dashboard ("Phoenix Dashboard") is a Next.js application us
 |---|---|
 | `NEXT_PUBLIC_API_URL` | Points at the deployed backend, e.g. `https://phoenixdashboard.vercel.app/` |
 
-See [Deployment](deployment.md#frontend-vercel) for the full Vercel deployment configuration.

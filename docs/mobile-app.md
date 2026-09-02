@@ -632,7 +632,7 @@ The final form fields, validation rules, API endpoint, and success/error behavio
 
 ### Market Price
 
-![Market Price](assets/images/mobile-screens/screen-market-price.png){ width="220" }
+
 
 The Market Price screen displays crop-based market price information and price trends.
 
@@ -1078,7 +1078,7 @@ The mobile app (Flutter) is used by Cooperative Agents and Wholesale Buyers for 
 
     ![Profile](assets/images/mobile-screens/screen-profile-logout.png)
 
-    Confirm-before-logout modal, consistent with the token-blacklist logout flow in [Security](security.md).
+    Confirm-before-logout modal, consistent with the token-blacklist logout flow in Security.
 
 !!! info "Remaining screens"
     Campaign List, Produce Verification, Farmer Registration, and Market Price don't have exports yet — add them here the same way once available.
