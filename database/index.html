@@ -1,0 +1,2020 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical Documentation for the Pamodzi Platform">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/akirachix/Phoenix_Technical_Documentation.git/database/">
+      
+      
+        <link rel="prev" href="../backend/">
+      
+      
+        <link rel="next" href="../frontend_web/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo-assets/favicon-64.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Database - Pamodzi Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Quicksand";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/brand/pamodzi.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#database" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-header__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pamodzi Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Database
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../system%20architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  System Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../backend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Backend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../frontend_web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mobile-app/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-nav__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    Pamodzi Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system%20architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entity-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Dictionary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Dictionary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#farmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        farmer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cooperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cooperative_agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wholesale_buyer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wholesale_buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce_listing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        produce_listing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce_pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        produce_pool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demandcampaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        demandcampaign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment_transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        payment_transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merchant_accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        merchant_accounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms_notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sms_notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketprice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        marketprice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ussd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_blacklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        token_blacklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationships-erd-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationships (ERD Summary)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#entity-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Entity Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-dictionary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Dictionary
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Dictionary">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#user" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        user
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#farmer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        farmer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cooperative
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative_agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cooperative_agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#wholesale_buyer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wholesale_buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce_listing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        produce_listing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce_pool" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        produce_pool
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demandcampaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        demandcampaign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#payment_transactions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        payment_transactions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#merchant_accounts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        merchant_accounts
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sms_notification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sms_notification
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#marketprice" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        marketprice
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ussd" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ussd
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#token_blacklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        token_blacklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationships-erd-summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationships (ERD Summary)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="database">Database</h1>
+<h2 id="entity-overview">Entity Overview</h2>
+<table>
+<thead>
+<tr>
+<th>Table</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user</code></td>
+<td>Root identity record for every person on the platform; role-based</td>
+</tr>
+<tr>
+<td><code>farmer</code></td>
+<td>Farmer-specific profile, linked to a user and a cooperative</td>
+</tr>
+<tr>
+<td><code>cooperative</code></td>
+<td>A cooperative hub — location, province, contact info</td>
+</tr>
+<tr>
+<td><code>cooperative_agent</code></td>
+<td>Staff account tied to a cooperative, manages field operations</td>
+</tr>
+<tr>
+<td><code>wholesale_buyer</code></td>
+<td>Buyer company profile, linked to a user</td>
+</tr>
+<tr>
+<td><code>produce_listing</code></td>
+<td>A single farmer's produce entry, pending aggregation</td>
+</tr>
+<tr>
+<td><code>produce_pool</code></td>
+<td>Aggregated produce assigned against a demand campaign</td>
+</tr>
+<tr>
+<td><code>demandcampaign</code></td>
+<td>A buyer's request for crop/grade/quantity, with funding status</td>
+</tr>
+<tr>
+<td><code>payment_transactions</code></td>
+<td>Ledger of all money movement (buyer charges, payouts)</td>
+</tr>
+<tr>
+<td><code>merchant_accounts</code></td>
+<td>Platform's Flutterwave merchant wallet(s) and balances</td>
+</tr>
+<tr>
+<td><code>sms_notification</code></td>
+<td>Log of every SMS/in-app notification sent, with delivery status</td>
+</tr>
+<tr>
+<td><code>marketprice</code></td>
+<td>Reference commodity prices by province and date</td>
+</tr>
+<tr>
+<td><code>ussd</code></td>
+<td>Raw USSD session data before it becomes a formal produce listing</td>
+</tr>
+<tr>
+<td><code>token_blacklist</code></td>
+<td>Revoked JWTs (logout/invalidation)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="data-dictionary">Data Dictionary</h2>
+<h3 id="user"><code>user</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>user_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>first_name</code></td>
+<td>String(100)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>String(100)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>phone_number</code></td>
+<td>String(20)</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td><code>nrc_number</code></td>
+<td>String(20)</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime (tz)</td>
+<td>NOT NULL, default now</td>
+</tr>
+<tr>
+<td><code>is_archived</code></td>
+<td>Boolean</td>
+<td>default False</td>
+</tr>
+<tr>
+<td><code>role</code></td>
+<td>Enum: <code>admin</code>, <code>cooperative_agent</code>, <code>farmer</code>, <code>wholesale_buyer</code></td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String(100)</td>
+<td>UNIQUE, nullable</td>
+</tr>
+<tr>
+<td><code>password_hash</code></td>
+<td>String(255)</td>
+<td>nullable</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Constraints:</strong> Non-admin users must <strong>not</strong> have <code>password_hash</code>/<code>email</code> set; admins <strong>must</strong> have <code>password_hash</code> set (enforced via a DB <code>CheckConstraint</code>).
+<strong>Relationships:</strong> 1–1 with <code>wholesale_buyer</code>, <code>farmer</code>, <code>cooperative_agent</code>.</p>
+<h3 id="farmer"><code>farmer</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>farmer_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>UUID</td>
+<td>FK → <code>user.user_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>cooperative_id</code></td>
+<td>UUID</td>
+<td>FK → <code>cooperative.cooperative_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>pin_hash</code></td>
+<td>String(255)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>is_verified</code></td>
+<td>Boolean</td>
+<td>default False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="cooperative"><code>cooperative</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cooperative_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>cooperative_name</code></td>
+<td>String(50)</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td><code>address</code></td>
+<td>String(150)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>phone_number</code></td>
+<td>String(20)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime (tz)</td>
+<td>NOT NULL, default now</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td>Boolean</td>
+<td>default True</td>
+</tr>
+<tr>
+<td><code>province</code></td>
+<td>Enum (10 Zambian provinces)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>latitude</code></td>
+<td>Numeric(8,6)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>longitude</code></td>
+<td>Numeric(9,6)</td>
+<td>NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Provinces: Central, Copperbelt, Eastern, Luapula, Lusaka, Muchinga, Northern, North-Western, Southern, Western.</p>
+</blockquote>
+<h3 id="cooperative_agent"><code>cooperative_agent</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>agent_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>UUID</td>
+<td>FK → <code>user.user_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>cooperative_id</code></td>
+<td>UUID</td>
+<td>FK → <code>cooperative.cooperative_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>staff_id</code></td>
+<td>String(20)</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td><code>password_hash</code></td>
+<td>String(255)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>agent_status</code></td>
+<td>Enum <code>AgentStatusEnum</code></td>
+<td>default <code>ACTIVE</code>, NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="wholesale_buyer"><code>wholesale_buyer</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>buyer_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>user_id</code></td>
+<td>UUID</td>
+<td>FK → <code>user.user_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>password_hash</code></td>
+<td>String(255)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>String(50)</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td><code>company_name</code></td>
+<td>String(50)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>pacra_number</code></td>
+<td>String(50)</td>
+<td>NOT NULL (Zambian company registration number)</td>
+</tr>
+<tr>
+<td><code>is_archived</code></td>
+<td>Boolean</td>
+<td>default False</td>
+</tr>
+</tbody>
+</table>
+<h3 id="produce_listing"><code>produce_listing</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>produce_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>farmer_id</code></td>
+<td>UUID</td>
+<td>FK → <code>farmer.farmer_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>cooperative_id</code></td>
+<td>UUID</td>
+<td>FK → <code>cooperative.cooperative_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>produce_pool_id</code></td>
+<td>UUID</td>
+<td>FK → <code>produce_pool.produce_pool_id</code>, nullable</td>
+</tr>
+<tr>
+<td><code>ussd_id</code></td>
+<td>UUID</td>
+<td>FK → <code>ussd.ussd_id</code>, nullable</td>
+</tr>
+<tr>
+<td><code>produce_type</code></td>
+<td>String(50)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>produce_status</code></td>
+<td>Enum: <code>not aggregated</code>, <code>aggregated</code>, <code>archived</code>, <code>rejected</code>, <code>approved</code></td>
+<td>NOT NULL, default <code>not aggregated</code></td>
+</tr>
+<tr>
+<td><code>produce_quantity</code></td>
+<td>Integer</td>
+<td>NOT NULL, CHECK &gt; 0</td>
+</tr>
+<tr>
+<td><code>listed_at</code></td>
+<td>DateTime (tz)</td>
+<td>NOT NULL, default now</td>
+</tr>
+</tbody>
+</table>
+<h3 id="produce_pool"><code>produce_pool</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>produce_pool_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>campaign_id</code></td>
+<td>UUID</td>
+<td>FK → <code>demandcampaign.campaign_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime (tz)</td>
+<td>NOT NULL, default now</td>
+</tr>
+<tr>
+<td><code>allocated_weight</code></td>
+<td>Float</td>
+<td>NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="demandcampaign"><code>demandcampaign</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>campaign_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>target_cooperative_id</code></td>
+<td>UUID</td>
+<td>FK → <code>cooperative.cooperative_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>buyer_id</code></td>
+<td>UUID</td>
+<td>FK → <code>wholesale_buyer.buyer_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>campaign_status</code></td>
+<td>Enum: <code>aggregating</code>, <code>fulfilled</code>, <code>cancelled</code>, <code>archived</code></td>
+<td>nullable, default None</td>
+</tr>
+<tr>
+<td><code>crop_type</code></td>
+<td>Enum: <code>maize</code>, <code>sorghum</code>, <code>groundnuts</code>, <code>millet</code></td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>grade</code></td>
+<td>Enum: <code>A</code>, <code>B</code>, <code>C</code></td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>province</code></td>
+<td>Enum (10 Zambian provinces)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>Numeric(10,2)</td>
+<td>NOT NULL, CHECK &gt; 0</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Numeric(12,2)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>payment_confirmed</code></td>
+<td>Boolean</td>
+<td>default False</td>
+</tr>
+<tr>
+<td><code>start_date</code></td>
+<td>DateTime (tz)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>end_date</code></td>
+<td>DateTime (tz)</td>
+<td>NOT NULL, CHECK <code>end_date &gt; start_date</code></td>
+</tr>
+<tr>
+<td><code>is_extended</code></td>
+<td>Boolean</td>
+<td>default False</td>
+</tr>
+<tr>
+<td><code>extension_reminder_sent</code></td>
+<td>Boolean</td>
+<td>default False</td>
+</tr>
+<tr>
+<td><code>moisture_content</code></td>
+<td>Numeric(4,2)</td>
+<td>NOT NULL</td>
+</tr>
+</tbody>
+</table>
+<h3 id="payment_transactions"><code>payment_transactions</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>transaction_id</code></td>
+<td>UUID</td>
+<td>PK, client-generated (<code>uuid4</code>)</td>
+</tr>
+<tr>
+<td><code>campaign_id</code></td>
+<td>UUID</td>
+<td>FK → <code>demandcampaign.campaign_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>buyer_id</code></td>
+<td>UUID</td>
+<td>FK → <code>wholesale_buyer.buyer_id</code>, NOT NULL</td>
+</tr>
+<tr>
+<td><code>cooperative_id</code></td>
+<td>UUID</td>
+<td>FK → <code>cooperative.cooperative_id</code>, nullable</td>
+</tr>
+<tr>
+<td><code>merchant_wallet_id</code></td>
+<td>UUID</td>
+<td>FK → <code>merchant_accounts.merchant_wallet_id</code>, nullable</td>
+</tr>
+<tr>
+<td><code>amount</code></td>
+<td>Numeric(10,2)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>transaction_fee</code></td>
+<td>Numeric(10,2)</td>
+<td>default 0.00</td>
+</tr>
+<tr>
+<td><code>platform_fee</code></td>
+<td>Numeric(10,2)</td>
+<td>default 0.00</td>
+</tr>
+<tr>
+<td><code>net_payout_amount</code></td>
+<td>Numeric(10,2)</td>
+<td>default 0.00</td>
+</tr>
+<tr>
+<td><code>currency</code></td>
+<td>String(10)</td>
+<td>default <code>"ZMW"</code></td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String(50)</td>
+<td>default enum</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td>String(50)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>mobile_money_provider</code></td>
+<td>String(20)</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>flutterwave_ref</code></td>
+<td>String(255)</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>platform_internal_ref</code></td>
+<td>String(255)</td>
+<td>NOT NULL, UNIQUE</td>
+</tr>
+<tr>
+<td><code>payout_destination_meta</code></td>
+<td>JSON</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>metadata_json</code></td>
+<td>JSON</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime (tz)</td>
+<td>default now</td>
+</tr>
+<tr>
+<td><code>updated_at</code></td>
+<td>DateTime (tz)</td>
+<td>default now, on update now</td>
+</tr>
+</tbody>
+</table>
+<h3 id="merchant_accounts"><code>merchant_accounts</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>merchant_wallet_id</code></td>
+<td>UUID</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>flutterwave_merchant_id</code></td>
+<td>String</td>
+<td>UNIQUE, nullable</td>
+</tr>
+<tr>
+<td><code>initial_balance</code></td>
+<td>Numeric(10,2)</td>
+<td>default 0.00</td>
+</tr>
+<tr>
+<td><code>current_balance</code></td>
+<td>Numeric(10,2)</td>
+<td>default 0.00</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime (tz)</td>
+<td>default now</td>
+</tr>
+<tr>
+<td><code>is_active</code></td>
+<td>Enum <code>MerchantStatus</code></td>
+<td>default — <em>(confirm default value)</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="sms_notification"><code>sms_notification</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>notification_id</code></td>
+<td>UUID</td>
+<td>PK, server-generated</td>
+</tr>
+<tr>
+<td><code>recipient_phone</code></td>
+<td>String(15)</td>
+<td>nullable, CHECK length ≥ 9</td>
+</tr>
+<tr>
+<td><code>notification_type</code></td>
+<td>Enum: <code>listing_confirmation</code>, <code>dropoff_reminder</code>, <code>campaign_extension_request</code>, <code>campaign_cancelled_refund</code>, <code>campaign_cancellation_blocked</code>, <code>buyer_produce_pickup</code></td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>channel</code></td>
+<td>Enum: <code>sms</code>, <code>in_app</code></td>
+<td>default <code>sms</code></td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td>Text</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>Enum: <code>pending</code>, <code>sent</code>, <code>failed</code>, <code>read</code></td>
+<td>default <code>pending</code></td>
+</tr>
+<tr>
+<td><code>response</code></td>
+<td>Enum: <code>pending</code>, <code>accepted</code>, <code>rejected</code></td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>responded_at</code></td>
+<td>DateTime (tz)</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>reference_id</code></td>
+<td>UUID</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>error_detail</code></td>
+<td>Text</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>sent_at</code></td>
+<td>DateTime (tz)</td>
+<td>nullable</td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime (tz)</td>
+<td>default now</td>
+</tr>
+<tr>
+<td><code>farmer_id</code></td>
+<td>UUID</td>
+<td>FK → <code>farmer.farmer_id</code>, nullable</td>
+</tr>
+<tr>
+<td><code>buyer_id</code></td>
+<td>UUID</td>
+<td>FK → <code>wholesale_buyer.buyer_id</code>, nullable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="marketprice"><code>marketprice</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>commodity</code></td>
+<td>String</td>
+<td>PK (composite)</td>
+</tr>
+<tr>
+<td><code>province</code></td>
+<td>String</td>
+<td>PK (composite)</td>
+</tr>
+<tr>
+<td><code>price_date</code></td>
+<td>Date</td>
+<td>PK (composite)</td>
+</tr>
+<tr>
+<td><code>price</code></td>
+<td>Numeric(10,2)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>String</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>source_last_modified</code></td>
+<td>String</td>
+<td>nullable</td>
+</tr>
+</tbody>
+</table>
+<h3 id="ussd"><code>ussd</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ussd_id</code></td>
+<td>UUID</td>
+<td>PK, client-generated (<code>uuid4</code>)</td>
+</tr>
+<tr>
+<td><code>phone_number</code></td>
+<td>String(20)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>crop_type</code></td>
+<td>String(50)</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>quantity</code></td>
+<td>Float</td>
+<td>NOT NULL</td>
+</tr>
+<tr>
+<td><code>status</code></td>
+<td>String(30)</td>
+<td>default <code>"not_aggregated"</code></td>
+</tr>
+<tr>
+<td><code>created_at</code></td>
+<td>DateTime</td>
+<td>default now</td>
+</tr>
+</tbody>
+</table>
+<h3 id="token_blacklist"><code>token_blacklist</code></h3>
+<table>
+<thead>
+<tr>
+<th>Column</th>
+<th>Type</th>
+<th>Constraints</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>token</code></td>
+<td>String(1024)</td>
+<td>PK</td>
+</tr>
+<tr>
+<td><code>blacklisted_at</code></td>
+<td>DateTime</td>
+<td>default now (UTC)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="relationships-erd-summary">Relationships (ERD Summary)</h2>
+<table>
+<thead>
+<tr>
+<th>From</th>
+<th>Cardinality</th>
+<th>To</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cooperative</td>
+<td>One-to-many</td>
+<td>Cooperative Agent</td>
+</tr>
+<tr>
+<td>Buyer</td>
+<td>One-to-many</td>
+<td>Demand Campaign</td>
+</tr>
+<tr>
+<td>Farmer</td>
+<td>One-to-many</td>
+<td>Produce Listing</td>
+</tr>
+<tr>
+<td>Demand Campaign</td>
+<td>One-to-many</td>
+<td>Produce Listing</td>
+</tr>
+<tr>
+<td>Demand Campaign</td>
+<td>One-to-one</td>
+<td>Payment</td>
+</tr>
+<tr>
+<td>Cooperative</td>
+<td>One-to-one</td>
+<td>Location</td>
+</tr>
+<tr>
+<td>Farmer</td>
+<td>One-to-one</td>
+<td>Cooperative</td>
+</tr>
+<tr>
+<td>Produce Pool</td>
+<td>One-to-many</td>
+<td>Produce Listing</td>
+</tr>
+<tr>
+<td>Merchant Account</td>
+<td>One-to-many</td>
+<td>Buyer</td>
+</tr>
+<tr>
+<td>Cooperative</td>
+<td>One-to-many</td>
+<td>Produce Listing</td>
+</tr>
+<tr>
+<td>Wholesale Buyer</td>
+<td>One-to-many</td>
+<td>Payment Transactions</td>
+</tr>
+<tr>
+<td>Demand Campaign</td>
+<td>One-to-one</td>
+<td>Produce Pool</td>
+</tr>
+<tr>
+<td>User</td>
+<td>One-to-one</td>
+<td>Farmer</td>
+</tr>
+<tr>
+<td>User</td>
+<td>One-to-one</td>
+<td>Wholesale Buyer</td>
+</tr>
+<tr>
+<td>User</td>
+<td>One-to-one</td>
+<td>Cooperative Agent</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../backend/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Backend">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Backend
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../frontend_web/" class="md-footer__link md-footer__link--next" aria-label="Next: Frontend Web">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Frontend Web
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

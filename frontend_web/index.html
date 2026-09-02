@@ -1,0 +1,1519 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical Documentation for the Pamodzi Platform">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/akirachix/Phoenix_Technical_Documentation.git/frontend_web/">
+      
+      
+        <link rel="prev" href="../database/">
+      
+      
+        <link rel="next" href="../mobile-app/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo-assets/favicon-64.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Frontend Web - Pamodzi Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Quicksand";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/brand/pamodzi.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#phoenix_dashboard-frontend-getting-started-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-header__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pamodzi Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frontend Web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../system%20architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  System Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../backend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Backend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mobile-app/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-nav__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    Pamodzi Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system%20architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clone-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clone &amp; Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-running-it-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Running It Locally
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-code-snippets-common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Code Snippets — Common Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Code Snippets — Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-the-dashboard-shell-layoutjsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 The dashboard shell (layout.jsx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-a-new-dashboard-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 A new dashboard page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-fetching-from-the-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Fetching from the backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-a-dynamic-route-financecardsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 A dynamic route (FinanceCards/[id])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-a-chart-with-recharts-matches-marketpricesdashboardjsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 A chart with recharts (matches MarketPricesDashboard.jsx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-using-an-existing-icon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Using an existing icon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-deployment-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Deployment (Vercel)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#design-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Design reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#live-deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live deployment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Tech Stack
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-clone-install" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Clone &amp; Install
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Environment Variables
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-running-it-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Running It Locally
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-code-snippets-common-patterns" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Code Snippets — Common Patterns
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Code Snippets — Common Patterns">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-the-dashboard-shell-layoutjsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 The dashboard shell (layout.jsx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-a-new-dashboard-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 A new dashboard page
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-fetching-from-the-backend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Fetching from the backend
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-a-dynamic-route-financecardsid" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 A dynamic route (FinanceCards/[id])
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-a-chart-with-recharts-matches-marketpricesdashboardjsx" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 A chart with recharts (matches MarketPricesDashboard.jsx)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-using-an-existing-icon" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Using an existing icon
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-deployment-vercel" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Deployment (Vercel)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        10. Troubleshooting
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="phoenix_dashboard-frontend-getting-started-guide">Phoenix_Dashboard — Frontend Getting Started Guide</h1>
+<h2 id="1-overview">1. Overview</h2>
+<p><code>Phoenix_Dashboard</code> is the <strong>Desktop PWA used by Administrators</strong> to manage every ongoing process on the Pamodzi platform — cooperatives, demand campaigns, finances, market prices, and user onboarding. It talks exclusively to the <code>Phoenix_Backend</code> FastAPI service; it never touches the database or third-party services (Flutterwave, LocationIQ, Africa's Talking) directly.</p>
+<h3 id="design-reference">Design reference</h3>
+<p>🔗 <a href="https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix?node-id=1459-4">Phoenix Figma file</a>
+Walks through how each user (Farmer, Cooperative Agent, Wholesale Buyer,) moves through the platform, screen by screen.</p>
+<h3 id="live-deployment">Live deployment</h3>
+<p>🔗 <a href="https://phoenixdashboard.vercel.app/">phoenixdashboard.vercel.app</a> </p>
+<h2 id="2-tech-stack">2. Tech Stack</h2>
+<div class="grid cards">
+<ul>
+<li><strong>Framework</strong>
+    ---
+    Next.js 16.3.0 (App Router)</li>
+<li>
+<p><strong>UI Library</strong></p>
+<hr />
+<p>React 19.2.8 / React DOM 19.2.8</p>
+</li>
+<li>
+<p><strong>Language</strong></p>
+<hr />
+<p>TypeScript configured, strict mode on</p>
+</li>
+<li>
+<p><strong>Styling</strong></p>
+<hr />
+<p>Tailwind CSS v4 (configured) + CSS Modules </p>
+</li>
+<li>
+<p><strong>Forms</strong></p>
+<hr />
+<p><code>react-hook-form</code> </p>
+</li>
+<li>
+<p><strong>Charts</strong></p>
+<hr />
+<p><code>recharts</code></p>
+</li>
+<li>
+<p><strong>Icons</strong></p>
+<hr />
+<p>Custom inline SVG components in <code>icons.jsx</code></p>
+</li>
+<li>
+<p><strong>Font</strong></p>
+<hr />
+<p>Quicksand</p>
+</li>
+<li>
+<p><strong>Linting</strong></p>
+<hr />
+<p>ESLint 9 flat config (<code>eslint-config-next</code> + <code>eslint-config-prettier</code>) + Prettier</p>
+</li>
+<li>
+<p><strong>Hosting</strong></p>
+<hr />
+<p>Vercel</p>
+</li>
+</ul>
+</div>
+<h2 id="3-prerequisites">3. Prerequisites</h2>
+<p>Install these before cloning:</p>
+<ul>
+<li><strong>Node.js</strong> — use the version in ` Node LTS </li>
+<li><strong>npm</strong> (comes with Node) — the repo uses <code>package-lock.json</code>, </li>
+<li>Access to the <code>Phoenix_Backend</code> repo, or at least a running instance of it (local or the shared dev deployment) — the dashboard is unusable without an API to hit</li>
+<li>A GitHub account with access to the <code>akirachix</code> org repos</li>
+<li>Figma access for  UI work: <code>https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix</code></li>
+</ul>
+<hr />
+<h2 id="4-clone-install">4. Clone &amp; Install</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/akirachix/Phoenix_Dashboard.git
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>Phoenix_Dashboard
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>npm<span class="w"> </span>install
+</code></pre></div>
+<hr />
+<h2 id="5-environment-variables">5. Environment Variables</h2>
+<p>Create a <code>.env.local</code> file in the project root (never commit this):</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nv">NEXT_PUBLIC_API_URL</span><span class="o">=</span>http://localhost:8000
+</code></pre></div>
+<ul>
+<li>In local dev, point this at your local <code>Phoenix_Backend</code> instance (default <code>uvicorn</code> port is 8000).</li>
+<li>In production, this points at the deployed backend on Heroku (<code>NEXT_PUBLIC_API_URL</code> is set in Vercel's project settings, not in a committed file — it's what backs <code>phoenixdashboard.vercel.app</code>).</li>
+<li>Because it's prefixed <code>NEXT_PUBLIC_</code>, this value is exposed to the browser bundle — never put secrets in a <code>NEXT_PUBLIC_</code> variable.</li>
+</ul>
+<hr />
+<h2 id="6-running-it-locally">6. Running It Locally</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<p>This starts the Next.js dev server (default <code>http://localhost:3000</code>) with hot reload. You'll need <code>Phoenix_Backend</code> running concurrently (see its own Getting Started section) for any page beyond the static shell to actually load data — login, dashboard cards, market prices, etc. all fetch from the API.</p>
+<p>Quick sanity check after starting both:
+1. Open <code>http://localhost:3000/login</code>
+2. Log in with an admin account (seeded via <code>seed_cooperative.py</code> on the backend, or ask a teammate for dev credentials)
+3. Confirm the dashboard loads cooperative/campaign data without console errors</p>
+<p>Other scripts you'll use:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>npm<span class="w"> </span>run<span class="w"> </span>build<span class="w">      </span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>npm<span class="w"> </span>run<span class="w"> </span>lint<span class="w">       </span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>npm<span class="w"> </span>run<span class="w"> </span>start<span class="w">      </span>
+</code></pre></div>
+<hr />
+<h2 id="7-project-structure">7. Project Structure</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>app/
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>├── api/
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>├── components/
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>│   └── produce_pool/
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>├── cooperative-info/
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>├── dashboard/
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>│   ├── onboard-user/
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>│   ├── layout.jsx
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>│   └── page.jsx
+<a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>├── Finance/
+<a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>├── FinanceCards/[id]/
+<a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>├── Home/
+<a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>├── login/
+<a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>├── market-price/
+<a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>└── profile/
+<a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>
+<a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>components/
+<a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>├── dashboard/
+<a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>│   ├── Sidebar.jsx / .module.css
+<a id="__codelineno-4-20" name="__codelineno-4-20" href="#__codelineno-4-20"></a>│   ├── TopBar.jsx / .module.css
+<a id="__codelineno-4-21" name="__codelineno-4-21" href="#__codelineno-4-21"></a>│   └── icons.jsx
+<a id="__codelineno-4-22" name="__codelineno-4-22" href="#__codelineno-4-22"></a>├── App.jsx
+<a id="__codelineno-4-23" name="__codelineno-4-23" href="#__codelineno-4-23"></a>├── CooperativeInformationDashboard.jsx
+<a id="__codelineno-4-24" name="__codelineno-4-24" href="#__codelineno-4-24"></a>└── MarketPricesDashboard.jsx
+<a id="__codelineno-4-25" name="__codelineno-4-25" href="#__codelineno-4-25"></a>
+<a id="__codelineno-4-26" name="__codelineno-4-26" href="#__codelineno-4-26"></a>lib/
+<a id="__codelineno-4-27" name="__codelineno-4-27" href="#__codelineno-4-27"></a>├── admin.js
+<a id="__codelineno-4-28" name="__codelineno-4-28" href="#__codelineno-4-28"></a>└── api.js
+<a id="__codelineno-4-29" name="__codelineno-4-29" href="#__codelineno-4-29"></a>
+<a id="__codelineno-4-30" name="__codelineno-4-30" href="#__codelineno-4-30"></a>libs/
+<a id="__codelineno-4-31" name="__codelineno-4-31" href="#__codelineno-4-31"></a>└── api.js
+</code></pre></div>
+<hr />
+<h2 id="8-code-snippets-common-patterns">8. Code Snippets — Common Patterns</h2>
+<h3 id="81-the-dashboard-shell-layoutjsx">8.1 The dashboard shell (<code>layout.jsx</code>)</h3>
+<p>Every route nested under <code>app/dashboard/</code> gets wrapped by this layout.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">Sidebar</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@/components/dashboard/Sidebar"</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">TopBar</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@/components/dashboard/TopBar"</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./layout.module.css"</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">DashboardLayout</span><span class="p">({</span><span class="w"> </span><span class="nx">children</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">shell</span><span class="p">}&gt;</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">Sidebar</span><span class="w"> </span><span class="p">/&gt;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">main</span><span class="p">}&gt;</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">TopBar</span><span class="w"> </span><span class="p">/&gt;</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">main</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">content</span><span class="p">}&gt;{</span><span class="nx">children</span><span class="p">}&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>If you build a new page <em>outside</em> <code>app/dashboard/</code> (like <code>Home</code> or <code>login</code>) it will <strong>not</strong> get this shell automatically — that's why <code>/login</code> and <code>/Home</code> have their own standalone styling. Decide early whether a new screen belongs inside the admin shell or not.</p>
+<h3 id="82-a-new-dashboard-page">8.2 A new dashboard page</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./page.module.css"</span><span class="p">;</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">ExampleFeaturePage</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">container</span><span class="p">}&gt;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">title</span><span class="p">}&gt;</span><span class="nx">Example</span><span class="w"> </span><span class="nx">Feature</span><span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="w">      </span><span class="p">{</span><span class="cm">/* page content */</span><span class="p">}</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="83-fetching-from-the-backend">8.3 Fetching from the backend</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="kd">const</span><span class="w"> </span><span class="nx">API_URL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">process</span><span class="p">.</span><span class="nx">env</span><span class="p">.</span><span class="nx">NEXT_PUBLIC_API_URL</span><span class="p">;</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">apiGet</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">API_URL</span><span class="si">}${</span><span class="nx">path</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="nx">token</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{},</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`API error </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">text</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9" href="#__codelineno-7-9"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10" href="#__codelineno-7-10"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11" href="#__codelineno-7-11"></a><span class="p">}</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12" href="#__codelineno-7-12"></a>
+<a id="__codelineno-7-13" name="__codelineno-7-13" href="#__codelineno-7-13"></a><span class="k">export</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">apiPost</span><span class="p">(</span><span class="nx">path</span><span class="p">,</span><span class="w"> </span><span class="nx">body</span><span class="p">,</span><span class="w"> </span><span class="nx">token</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14" href="#__codelineno-7-14"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">fetch</span><span class="p">(</span><span class="sb">`</span><span class="si">${</span><span class="nx">API_URL</span><span class="si">}${</span><span class="nx">path</span><span class="si">}</span><span class="sb">`</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15" href="#__codelineno-7-15"></a><span class="w">    </span><span class="nx">method</span><span class="o">:</span><span class="w"> </span><span class="s2">"POST"</span><span class="p">,</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16" href="#__codelineno-7-16"></a><span class="w">    </span><span class="nx">headers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17" href="#__codelineno-7-17"></a><span class="w">      </span><span class="s2">"Content-Type"</span><span class="o">:</span><span class="w"> </span><span class="s2">"application/json"</span><span class="p">,</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18" href="#__codelineno-7-18"></a><span class="w">      </span><span class="p">...(</span><span class="nx">token</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">Authorization</span><span class="o">:</span><span class="w"> </span><span class="sb">`Bearer </span><span class="si">${</span><span class="nx">token</span><span class="si">}</span><span class="sb">`</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="p">{}),</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19" href="#__codelineno-7-19"></a><span class="w">    </span><span class="p">},</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20" href="#__codelineno-7-20"></a><span class="w">    </span><span class="nx">body</span><span class="o">:</span><span class="w"> </span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">body</span><span class="p">),</span>
+<a id="__codelineno-7-21" name="__codelineno-7-21" href="#__codelineno-7-21"></a><span class="w">  </span><span class="p">});</span>
+<a id="__codelineno-7-22" name="__codelineno-7-22" href="#__codelineno-7-22"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">res</span><span class="p">.</span><span class="nx">ok</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-23" name="__codelineno-7-23" href="#__codelineno-7-23"></a><span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="ne">Error</span><span class="p">(</span><span class="sb">`API error </span><span class="si">${</span><span class="nx">res</span><span class="p">.</span><span class="nx">status</span><span class="si">}</span><span class="sb">: </span><span class="si">${</span><span class="k">await</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">text</span><span class="p">()</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span>
+<a id="__codelineno-7-24" name="__codelineno-7-24" href="#__codelineno-7-24"></a><span class="w">  </span><span class="p">}</span>
+<a id="__codelineno-7-25" name="__codelineno-7-25" href="#__codelineno-7-25"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">res</span><span class="p">.</span><span class="nx">json</span><span class="p">();</span>
+<a id="__codelineno-7-26" name="__codelineno-7-26" href="#__codelineno-7-26"></a><span class="p">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">apiGet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@/lib/api"</span><span class="p">;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">useEffect</span><span class="p">,</span><span class="w"> </span><span class="nx">useState</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"react"</span><span class="p">;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">MarketPriceWidget</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">[</span><span class="nx">prices</span><span class="p">,</span><span class="w"> </span><span class="nx">setPrices</span><span class="p">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">useState</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="w">  </span><span class="nx">useEffect</span><span class="p">(()</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="w">    </span><span class="nx">apiGet</span><span class="p">(</span><span class="s2">"/market-prices/current"</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">setPrices</span><span class="p">).</span><span class="k">catch</span><span class="p">(</span><span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">);</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a><span class="w">  </span><span class="p">},</span><span class="w"> </span><span class="p">[]);</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a><span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="nx">prices</span><span class="p">)</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Loading</span><span class="p">...&lt;/</span><span class="nt">p</span><span class="p">&gt;;</span>
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">&lt;</span><span class="nt">pre</span><span class="p">&gt;{</span><span class="nb">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">prices</span><span class="p">,</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w"> </span><span class="mf">2</span><span class="p">)}&lt;/</span><span class="nt">pre</span><span class="p">&gt;;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="84-a-dynamic-route-financecardsid">8.4 A dynamic route (<code>FinanceCards/[id]</code>)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">apiGet</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@/lib/api"</span><span class="p">;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="k">import</span><span class="w"> </span><span class="nx">styles</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"./financecard.css"</span><span class="p">;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="k">async</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">FinanceCardPage</span><span class="p">({</span><span class="w"> </span><span class="nx">params</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">id</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">params</span><span class="p">;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">record</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">await</span><span class="w"> </span><span class="nx">apiGet</span><span class="p">(</span><span class="sb">`/finance/</span><span class="si">${</span><span class="nx">id</span><span class="si">}</span><span class="sb">`</span><span class="p">);</span><span class="w"> </span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">div</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">card</span><span class="p">}&gt;</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;{</span><span class="nx">record</span><span class="p">.</span><span class="nx">type</span><span class="p">}&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Amount</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">record</span><span class="p">.</span><span class="nx">amount</span><span class="p">}</span><span class="w"> </span><span class="p">{</span><span class="nx">record</span><span class="p">.</span><span class="nx">currency</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="nx">Status</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">record</span><span class="p">.</span><span class="nx">status</span><span class="p">}&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="p">}</span>
+</code></pre></div>
+<p>Note <code>params</code> is a <code>Promise</code> you have to <code>await</code> in current Next.js — a common mistake porting patterns from older Next.js tutorials is treating <code>params</code> as a plain object.</p>
+<h3 id="85-a-chart-with-recharts-matches-marketpricesdashboardjsx">8.5 A chart with recharts (matches <code>MarketPricesDashboard.jsx</code>)</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LineChart</span><span class="p">,</span><span class="w"> </span><span class="nx">Line</span><span class="p">,</span><span class="w"> </span><span class="nx">XAxis</span><span class="p">,</span><span class="w"> </span><span class="nx">YAxis</span><span class="p">,</span><span class="w"> </span><span class="nx">Tooltip</span><span class="p">,</span><span class="w"> </span><span class="nx">ResponsiveContainer</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"recharts"</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="nx">PriceTrendChart</span><span class="p">({</span><span class="w"> </span><span class="nx">data</span><span class="w"> </span><span class="p">})</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="p">(</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="w">    </span><span class="p">&lt;</span><span class="nt">ResponsiveContainer</span><span class="w"> </span><span class="na">width</span><span class="o">=</span><span class="s">"100%"</span><span class="w"> </span><span class="na">height</span><span class="o">=</span><span class="p">{</span><span class="mf">300</span><span class="p">}&gt;</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="w">      </span><span class="p">&lt;</span><span class="nt">LineChart</span><span class="w"> </span><span class="na">data</span><span class="o">=</span><span class="p">{</span><span class="nx">data</span><span class="p">}&gt;</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">XAxis</span><span class="w"> </span><span class="na">dataKey</span><span class="o">=</span><span class="s">"date"</span><span class="w"> </span><span class="p">/&gt;</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">YAxis</span><span class="w"> </span><span class="p">/&gt;</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">Tooltip</span><span class="w"> </span><span class="p">/&gt;</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a><span class="w">        </span><span class="p">&lt;</span><span class="nt">Line</span><span class="w"> </span><span class="na">type</span><span class="o">=</span><span class="s">"monotone"</span><span class="w"> </span><span class="na">dataKey</span><span class="o">=</span><span class="s">"price"</span><span class="w"> </span><span class="na">stroke</span><span class="o">=</span><span class="s">"#236b21"</span><span class="w"> </span><span class="na">strokeWidth</span><span class="o">=</span><span class="p">{</span><span class="mf">2</span><span class="p">}</span><span class="w"> </span><span class="p">/&gt;</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="w">      </span><span class="p">&lt;/</span><span class="nt">LineChart</span><span class="p">&gt;</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="w">    </span><span class="p">&lt;/</span><span class="nt">ResponsiveContainer</span><span class="p">&gt;</span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a><span class="w">  </span><span class="p">);</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="p">}</span>
+</code></pre></div>
+<h3 id="86-using-an-existing-icon">8.6 Using an existing icon</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">LeafIcon</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s2">"@/components/dashboard/icons"</span><span class="p">;</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">&lt;</span><span class="nt">button</span><span class="w"> </span><span class="na">className</span><span class="o">=</span><span class="p">{</span><span class="nx">styles</span><span class="p">.</span><span class="nx">primaryButton</span><span class="p">}&gt;</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="w">  </span><span class="p">&lt;</span><span class="nt">LeafIcon</span><span class="w"> </span><span class="p">/&gt;</span><span class="w"> </span><span class="nx">Approve</span><span class="w"> </span><span class="nx">Produce</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Add new icons to <code>icons.jsx</code> rather than pulling in an icon library — that's the established pattern.</p>
+<hr />
+<h2 id="9-deployment-vercel">9. Deployment (Vercel)</h2>
+<p>The frontend deploys to <strong>Vercel</strong>, connected to the <code>Phoenix_Dashboard</code> repo, and serves from <code>phoenixdashboard.vercel.app</code>.</p>
+<ul>
+<li>Required env var in Vercel project settings: <code>NEXT_PUBLIC_API_URL</code> → pointing at the production <code>Phoenix_Backend</code> URL on Heroku.</li>
+<li>Pushes to <code>main</code>  trigger an automatic Vercel deploy — there's no manual deploy step for the frontend.</li>
+<li>Preview deployments: opening a PR against <code>main</code> should give you a Vercel preview URL — use this to sanity-check UI changes before merge. </li>
+</ul>
+<p><strong>Pre-merge checklist</strong> (mirrors the platform-wide release checklist):</p>
+<ul>
+<li>[ ] <code>npm run build</code> succeeds locally with no errors</li>
+<li>[ ] <code>npm run lint</code> is clean</li>
+<li>[ ] Confirm <code>NEXT_PUBLIC_API_URL</code> in your <code>.env.local</code> points at the backend you actually tested against (don't accidentally test against prod)</li>
+<li>[ ] PR description follows <code>.github/pull_request_template.md</code></li>
+<li>[ ] After merge, verify <code>phoenixdashboard.vercel.app</code> loads inventory/dashboard data without console errors against the current production backend</li>
+</ul>
+<hr />
+<h2 id="10-troubleshooting">10. Troubleshooting</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Likely cause</th>
+<th>Check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboard loads but every data-driven section is blank/errors</td>
+<td><code>NEXT_PUBLIC_API_URL</code> isn't pointing at a reachable backend</td>
+<td>Confirm <code>.env.local</code> and that <code>Phoenix_Backend</code> is actually running on that port</td>
+</tr>
+<tr>
+<td>Login succeeds but immediately redirects back to <code>/login</code></td>
+<td>Token isn't being stored/attached, or it's a 401 from an expired/blacklisted JWT</td>
+<td>Check how the token is persisted after <code>/auth/login/admin/form</code> and that it's sent as a Bearer token on subsequent calls</td>
+</tr>
+<tr>
+<td>CORS error in the browser console</td>
+<td>Your frontend origin isn't in the backend's <code>CORS_ORIGINS</code></td>
+<td>This is a <strong>backend</strong> config fix (Heroku config var), not something you can patch from the frontend — flag it to the backend team with your exact origin (e.g. a Vercel preview URL)</td>
+</tr>
+<tr>
+<td>A page you expect to have the sidebar/topbar doesn't</td>
+<td>The route isn't nested under <code>app/dashboard/</code></td>
+<td>Move it under <code>app/dashboard/</code> if it's meant to be an authenticated admin screen, or confirm with the team if it's intentionally standalone like <code>/login</code>/<code>/Home</code></td>
+</tr>
+<tr>
+<td>Styling looks broken only in production, not <code>npm run dev</code></td>
+<td>Mixing global CSS (<code>home.css</code>-style) with CSS Modules can behave differently once bundled/minified</td>
+<td>Prefer CSS Modules for anything new; treat the plain-CSS files as legacy, not a pattern to extend</td>
+</tr>
+<tr>
+<td>Import error on <code>api.js</code></td>
+<td>You imported from <code>libs/</code> instead of <code>lib/</code> (or vice versa)</td>
+<td>Check which one the rest of the file's neighbors import from before adding a new call — don't assume</td>
+</tr>
+</tbody>
+</table>
+<h1 id="frontend-web">Frontend Web</h1>
+<p>The admin-facing web dashboard ("Phoenix Dashboard") is a Next.js application used by Administrators to manage all ongoing activity on the platform. For the page-by-page breakdown of the dashboard.</p>
+<h2 id="tech-stack">Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Choice</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Framework</td>
+<td>Next.js 16.3.0</td>
+<td>App Router — confirmed by <code>app/</code> paths and real page files</td>
+</tr>
+<tr>
+<td>UI Library</td>
+<td>React 19.2.8 / React DOM 19.2.8</td>
+<td></td>
+</tr>
+<tr>
+<td>Language</td>
+<td>TypeScript (strict mode)</td>
+<td>Configured, but the large majority of actual files are <code>.jsx</code>, not <code>.tsx</code> — see inconsistency note below</td>
+</tr>
+<tr>
+<td>Styling</td>
+<td>Tailwind CSS v4</td>
+<td>Configured, but in practice most components use CSS Modules instead</td>
+</tr>
+<tr>
+<td>Forms</td>
+<td>react-hook-form</td>
+<td>Declared as a dependency but not yet seen in use in any shared component — the Profile form uses plain <code>useState</code> instead</td>
+</tr>
+<tr>
+<td>Charts</td>
+<td>recharts</td>
+<td>Confirmed in active use in <code>MarketPricesDashboard.jsx</code> (line/trend charts per crop)</td>
+</tr>
+<tr>
+<td>Icons</td>
+<td>Custom inline SVG components</td>
+<td><code>icons.jsx</code> — <code>UserIcon</code>, <code>MailIcon</code>, <code>BadgeIcon</code>, <code>LockIcon</code>, <code>LeafIcon</code>, <code>SearchIcon</code>, <code>PhoneIcon</code></td>
+</tr>
+<tr>
+<td>Fonts</td>
+<td>Quicksand</td>
+<td></td>
+</tr>
+<tr>
+<td>Linting/Formatting</td>
+<td>ESLint 9 (flat config) + Prettier</td>
+<td>Extends <code>eslint-config-next</code> + <code>eslint-config-prettier</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="environment">Environment</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>NEXT_PUBLIC_API_URL</code></td>
+<td>Points at the deployed backend, e.g. <code>https://phoenixdashboard.vercel.app/</code></td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../database/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Database">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Database
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../mobile-app/" class="md-footer__link md-footer__link--next" aria-label="Next: Mobile App">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Mobile App
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

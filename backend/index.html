@@ -1,0 +1,1634 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical Documentation for the Pamodzi Platform">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/akirachix/Phoenix_Technical_Documentation.git/backend/">
+      
+      
+        <link rel="prev" href="../system%20architecture/">
+      
+      
+        <link rel="next" href="../database/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo-assets/favicon-64.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Backend - Pamodzi Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Quicksand";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/brand/pamodzi.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#pamodzi-backend-engineering-documentation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-header__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pamodzi Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Backend
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../system%20architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  System Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Backend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../frontend_web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../mobile-app/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-nav__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    Pamodzi Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system%20architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pamodzi-api-docs-httpspamodzi-bbe9f0671866herokuappcomdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pamodzi API Docs- https://pamodzi-bbe9f0671866.herokuapp.com/docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-your-first-admin-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting your first admin login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running migrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users-and-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users and roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-produce-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The produce lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooperative relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; Authorization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication &amp; Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-specific-authentication-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel-Specific Authentication Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-factor-authentication-2fa-session-lifecycle-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Factor Authentication (2FA) &amp; Session Lifecycle Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-encryption-storage-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Encryption &amp; Storage Safeguards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Encryption &amp; Storage Safeguards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-hashing-argon2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password hashing — Argon2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role-based access control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWTs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout-and-the-token-blacklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logout and the token blacklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mobile-app/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#pamodzi-api-docs-httpspamodzi-bbe9f0671866herokuappcomdocs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Pamodzi API Docs- https://pamodzi-bbe9f0671866.herokuapp.com/docs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#system-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        System Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#required-environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Required environment variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-locally" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running locally
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-your-first-admin-login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting your first admin login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-migrations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running migrations
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#domain-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Domain Model
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Domain Model">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#users-and-roles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Users and roles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#the-produce-lifecycle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The produce lifecycle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-relationships" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooperative relationships
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication-authorization" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication &amp; Authorization
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication &amp; Authorization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#channel-specific-authentication-vectors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Channel-Specific Authentication Vectors
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#authentication-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#two-factor-authentication-2fa-session-lifecycle-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Two-Factor Authentication (2FA) &amp; Session Lifecycle Steps
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data-encryption-storage-safeguards" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Data Encryption &amp; Storage Safeguards
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Data Encryption &amp; Storage Safeguards">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#password-hashing-argon2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Password hashing — Argon2
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#role-based-access-control" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role-based access control
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#jwts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JWTs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logout-and-the-token-blacklist" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logout and the token blacklist
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rate-limiting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rate limiting
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cors" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CORS
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="pamodzi-backend-engineering-documentation">Pamodzi Backend — Engineering Documentation</h1>
+<hr />
+<h3 id="pamodzi-api-docs-httpspamodzi-bbe9f0671866herokuappcomdocs">Pamodzi API Docs- https://pamodzi-bbe9f0671866.herokuapp.com/docs</h3>
+<h2 id="system-overview">System Overview</h2>
+<p>Pamodzi's backend is a single FastAPI service that every client — the farmer-facing USSD/SMS channel, the cooperative agent app, the wholesale buyer app, and the admin web dashboard. There is one PostgreSQL database and one API built on heroku.</p>
+<p>The service is deployed on Heroku as a single web running Uvicorn directly (<code>Procfile</code>: <code>web: uvicorn main:app --host 0.0.0.0 --port ${PORT}</code>). Three third-party services are integrated: <strong>Flutterwave</strong> for buyer payments and cooperative payouts, <strong>Africa's Talking</strong> for USSD and SMS, and <strong>LocationIQ</strong> for turning cooperative addresses into coordinates for the buyer's pickup.</p>
+<p>The core business flow the whole schema is built around: a wholesale buyer funds a demand campaign → farmers list matching produce over USSD → the platform pools matching listings → a cooperative agent verifies the pooled produce (moisture, weight, grade) → the buyer collects within a fixed window → the platform takes its fee and releases the rest to the cooperative. Nearly every table in this system exists to support one step of that flow.</p>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;repo&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">cd</span><span class="w"> </span>Phoenix_Backend
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>env
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="nb">source</span><span class="w"> </span>env/bin/activate
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>pip<span class="w"> </span>install<span class="w"> </span>-r<span class="w"> </span>requirements.txt
+</code></pre></div>
+<h4 id="required-environment-variables">Required environment variables</h4>
+<p>Create a <code>.env</code> file in the project root. These are the variables the app actually reads on startup (<code>database.py</code>, <code>core/security.py</code>, and the integration services) — the app will fail at import time.</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DATABASE_URL</code></td>
+<td>Postgres connection string. <code>postgres://</code> is auto-rewritten to <code>postgresql://</code> at startup —</td>
+</tr>
+<tr>
+<td><code>SECRET_KEY</code></td>
+<td>RS256 keypair.</td>
+</tr>
+<tr>
+<td><code>ALGORITHM</code></td>
+<td>JWT algorithm, currently <code>RS256</code>.</td>
+</tr>
+<tr>
+<td><code>ACCESS_TOKEN_EXPIRE_MINUTES</code></td>
+<td>JWT lifetime in minutes.</td>
+</tr>
+<tr>
+<td><code>AT_USERNAME</code>, <code>AT_API_KEY</code></td>
+<td>Africa's Talking credentials (USSD + SMS).</td>
+</tr>
+<tr>
+<td><code>LOCATION_API_KEY</code></td>
+<td>LocationIQ geocoding key.</td>
+</tr>
+<tr>
+<td><code>FLW_REDIRECT_URL</code>, <code>flutterwave_sk</code>, <code>flutterwave_base_url</code>, <code>flutterwave_webhook_secret_hash</code></td>
+<td>Flutterwave integration</td>
+</tr>
+<tr>
+<td><code>ADMIN_EMAIL</code>, <code>ADMIN_NRC</code>, <code>ADMIN_PASSWORD</code>, <code>ADMIN_PHONE</code></td>
+<td>Used once, on first boot, to seed the very first admin account directly into the database. this is how the admin gets the first login, not the <code>/auth/admin/onboard</code> endpoint.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="running-locally">Running locally</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>uvicorn<span class="w"> </span>main:app<span class="w"> </span>--reload
+</code></pre></div>
+<p>On startup, <code>main.py</code>'s <code>lifespan</code> function runs <code>Base.metadata.create_all()</code>, seeds the first admin account if none exists, runs an initial market-price sync, and starts an in-process APScheduler with two jobs: a daily campaign check (08:00) and a 30-day market price resync.</p>
+<h4 id="getting-your-first-admin-login">Getting your first admin login</h4>
+<p>In regards to admin Log in <strong>there is no self-service way to create the first admin.</strong> <code>POST /auth/admin/onboard</code> requires you to already be logged in as an admin. The way the <em>first</em> admin gets into the system is a raw SQL insert that runs automatically in <code>lifespan</code>, using <code>ADMIN_EMAIL</code> / <code>ADMIN_NRC</code> / <code>ADMIN_PASSWORD</code> / <code>ADMIN_PHONE</code> from your <code>.env</code>, but only if no admin row already exists. Log in with those credentials against <code>POST /auth/login/admin/form</code>, and from that session you can onboard further admins normally.</p>
+<h4 id="running-migrations">Running migrations</h4>
+<p>The GitHub Actions workflow (<code>.github/workflows/deploy.yml</code>) installs dependencies and pushes to Heroku — <strong>it does not run Alembic</strong>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>heroku<span class="w"> </span>run<span class="w"> </span>alembic<span class="w"> </span>upgrade<span class="w"> </span>head
+</code></pre></div>
+<hr />
+<h2 id="project-structure">Project Structure</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Phoenix_Backend/
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>├── alembic/                # Migration scripts
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>├── core/
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>│   └── security.py         # Password hashing, JWT encode/decode, rate limiter instance
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>├── pamodzi/
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>│   ├── models/              # SQLAlchemy ORM table definitions
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>│   ├── repositories/        # Query logic — one class per entity
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>│   ├── schemas/              # Pydantic request/response contracts
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>│   ├── services/              # Business rules, cross-entity orchestration
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>│   └── routers/                 # HTTP endpoints — parse request, call a service, return
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>├── database.py              # Engine, session factory, get_db() dependency
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>├── dependencies.py          # Auth dependencies: get_current_user, require_admin, etc.
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>└── main.py                  # App bootstrap, middleware, startup/shutdown lifecycle
+</code></pre></div>
+<p>The convention (not a linter-enforced rule — worth knowing, since nothing will stop a PR that breaks it) is: routers depend on services, services depend on repositories, repositories are the only layer that touches <code>db.query()</code>. When you add a new feature, you're usually touching all five folders in that order: model → migration → schema → repository → service → router.</p>
+<hr />
+<h2 id="domain-model">Domain Model</h2>
+<h4 id="users-and-roles">Users and roles</h4>
+<p>Every person in the system has exactly one row in <code>user</code>, discriminated by a <code>role</code> column (<code>admin</code>, <code>cooperative_agent</code>, <code>wholesale_buyer</code>, <code>farmer</code>). Role-specific data — and role-specific credentials — live in a separate table per role, joined back to <code>user</code> by <code>user_id</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Credential table</th>
+<th>How they authenticate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Admin</td>
+<td><code>user</code> itself (<code>password_hash</code> on the base row)</td>
+<td>Email or phone + password</td>
+</tr>
+<tr>
+<td>Cooperative Agent</td>
+<td><code>cooperative_agent</code> (<code>password_hash</code>, <code>staff_id</code>)</td>
+<td><code>staff_id</code> + password</td>
+</tr>
+<tr>
+<td>Wholesale Buyer</td>
+<td><code>wholesale_buyer</code> (<code>password_hash</code>, <code>email</code>)</td>
+<td>Email + password</td>
+</tr>
+<tr>
+<td>Farmer</td>
+<td><code>farmer</code> (<code>pin_hash</code>)</td>
+<td>Phone number + 4-digit PIN, over USSD</td>
+</tr>
+</tbody>
+</table>
+<p><code>nrc_number</code> is <code>NOT NULL</code> on the base <code>user</code> table for <strong>every</strong> role, admin included</p>
+<h4 id="the-produce-lifecycle">The produce lifecycle</h4>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flowchart LR
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    A[Wholesale Buyer creates&lt;br/&gt;DemandCampaign] --&gt;|Flutterwave payment| B[Campaign confirmed]
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    B --&gt; C[Farmers list produce&lt;br/&gt;via USSD]
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    C --&gt; D[ProduceListing]
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    D --&gt;|matches crop/cooperative/province| E[ProducePool]
+<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    E --&gt;|agent checks moisture, weight, grade| F{Verified?}
+<a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>    F --&gt;|approved| G[Buyer notified,&lt;br/&gt;72hr pickup window]
+<a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>    F --&gt;|rejected| H[Excluded from pool]
+<a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>    G --&gt; I[PaymentTransaction:&lt;br/&gt;payout to cooperative,&lt;br/&gt;5% platform fee retained]
+</code></pre></div>
+<ul>
+<li><strong><code>DemandCampaign</code></strong> — created by a buyer, scoped to a crop type, quantity, and target province/cooperative.</li>
+<li><strong><code>ProduceListing</code></strong> — one farmer's offered quantity of a crop, created via USSD.</li>
+<li><strong><code>ProducePool</code></strong> — the aggregation join between listings and a campaign; this is what "aggregator platform" actually means at the schema level.</li>
+<li><strong><code>MerchantAccount</code></strong> — the platform's own Flutterwave-linked balance record.</li>
+<li><strong><code>PaymentTransaction</code></strong> — the ledger: buyer payment in, cooperative payout out, refunds.</li>
+<li><strong><code>SmsNotification</code></strong> — outbound (and some inbound-response) SMS tied to a farmer/campaign event.</li>
+<li><strong><code>TokenBlacklist</code></strong> —</li>
+</ul>
+<h4 id="cooperative-relationships">Cooperative relationships</h4>
+<p><code>Cooperative</code> has direct SQLAlchemy relationships to both <code>Farmer</code> (<code>cooperative.farmers</code>) and <code>CooperativeAgent</code> (<code>cooperative.agents</code>) via <code>cooperative_id</code> foreign keys on each.</p>
+<hr />
+<h2 id="authentication-authorization">Authentication &amp; Authorization</h2>
+<h4 id="channel-specific-authentication-vectors">Channel-Specific Authentication Vectors</h4>
+<ul>
+<li><strong>Farmers (USSD / Low-Literacy Optimization)</strong>: Authenticate using an encrypted <strong>Numerical PIN</strong> rather than an alpha-numeric password string. This matches the restricted layout of standard mobile device telephone keypads. The PIN is hashed using secure algorithms before storage, protecting users against SIM-swap attacks and internal data visibility.</li>
+<li><strong>Cooperative Agents</strong>: Authenticate via a structural combination of a localized <code>staff_id</code> string and an alpha-numeric password.</li>
+<li><strong>Wholesale Buyers</strong>: Authenticate using standard credentials via corporate <code>email</code> addresses and passwords.</li>
+<li><strong>Administrators</strong>: Require complete administrative credentials (<code>email</code> + complex password) combined with an enforced, multi-factor authentication (MFA) layer.</li>
+</ul>
+<h4 id="authentication-flow">Authentication flow</h4>
+<p>Only Admins have <code>password_hash</code> / <code>email</code> directly on the <code>user</code> table — enforced by a DB check constraint:
+<code>role = 'admin' OR (password_hash IS NULL AND email IS NULL)</code>.
+Non-admin login credentials always live on the role-specific table instead.</p>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Credential</th>
+<th>Stored on</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Farmer</td>
+<td>PIN</td>
+<td><code>Farmer.pin_hash</code></td>
+</tr>
+<tr>
+<td>Cooperative Agent</td>
+<td>Password</td>
+<td><code>CooperativeAgent.password_hash</code></td>
+</tr>
+<tr>
+<td>Wholesale Buyer</td>
+<td>Password</td>
+<td><code>WholesaleBuyer.password_hash</code></td>
+</tr>
+<tr>
+<td>Administrator</td>
+<td>Password + mandatory MFA</td>
+<td><code>User.password_hash</code></td>
+</tr>
+</tbody>
+</table>
+<p>Farmers authenticate via a <strong>PIN</strong>, not a password — consistent with the USSD-first, low-literacy access pattern.</p>
+<h3 id="two-factor-authentication-2fa-session-lifecycle-steps">Two-Factor Authentication (2FA) &amp; Session Lifecycle Steps</h3>
+<p>Critical high-level accesses (Administrators and Wholesale Buyers) must step through a multi-tier authentication process before accessing protected resources:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>[Phase 1: Login Ingress] -&gt; Post Payload (Credentials) -&gt; System Validates
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>                                                                 |
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>                                              [Generates Temporary 2FA Token in Redis]
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>                                                                 |
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>                                              [Dispatches Out-Of-Band Verification Code]
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>                                                                 |
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>[Phase 2: Challenge Verification] -&gt; Post Payload (Token + OTP) -&gt; System Confirms Match
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>                                                                 |
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>                                               [Issues Secure Asymmetric JWT Bearer]
+</code></pre></div>
+<ol>
+<li><strong>Initial Validation Ingress</strong>: The user submits primary credentials to <code>/auth/login/admin/form</code> or <code>/auth/login/buyer</code>.</li>
+<li><strong>Temporary Token Generation</strong>: Upon credential verification, the system does not issue a functional session token. Instead, it writes a short-lived <code>twofa_session_token</code> directly to <strong>Redis</strong> with an automated 5-minute expiration window (TTL).</li>
+<li><strong>Out-of-Band Dispatches</strong>: The platform generates a cryptographically random One-Time Password (OTP) and sends it out-of-band to the user's registered phone or email address.</li>
+<li><strong>Challenge Verification Ingress</strong>: The client passes the temporary session token along with the user's input OTP code to the <code>/auth/verify-2fa</code> endpoint. If valid, the system destroys the temporary Redis state and issues a functional, secure asymmetric JWT access bearer token.</li>
+</ol>
+<h3 id="data-encryption-storage-safeguards">Data Encryption &amp; Storage Safeguards</h3>
+<ul>
+<li><strong>Encryption-in-Transit</strong>: Enforced system-wide. The Heroku router drops unencrypted inbound traffic and upgrades requests to <strong>HTTPS via TLS 1.3</strong>. Internal database connections utilize enforced SSL mode validations (<code>sslmode=require</code>).</li>
+</ul>
+<h4 id="password-hashing-argon2">Password hashing — Argon2</h4>
+<p><code>core/security.py</code> hashes every stored credential (admin passwords, agent passwords, buyer passwords, and farmer PINs) with <strong>Argon2</strong> via <code>argon2-cffi</code>'s <code>PasswordHasher</code>.— Argon2id <code>PasswordHasher()</code> isknown for being memory-hard, which makes GPU/ASIC-accelerated cracking meaningfully more expensive than it is against bcrypt or PBKDF2. <code>bcrypt</code> and <code>passlib</code> are also included <code>requirements.txt</code></p>
+<h4 id="role-based-access-control">Role-based access control</h4>
+<p><code>dependencies.py</code> defines seven auth dependencies, all built on one <code>get_current_user</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Dependency</th>
+<th>Allows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>get_current_user</code></td>
+<td>Any valid, non-blacklisted token for a non-archived user</td>
+</tr>
+<tr>
+<td><code>require_admin</code></td>
+<td><code>role == "admin"</code> only</td>
+</tr>
+<tr>
+<td><code>require_agent</code></td>
+<td><code>role == "cooperative_agent"</code> only</td>
+</tr>
+<tr>
+<td><code>require_farmer</code></td>
+<td><code>role == "farmer"</code> only</td>
+</tr>
+<tr>
+<td><code>require_buyer</code></td>
+<td><code>role == "wholesale_buyer"</code> only</td>
+</tr>
+<tr>
+<td><code>require_admin_or_agent</code></td>
+<td>admin or cooperative_agent</td>
+</tr>
+<tr>
+<td><code>require_admin_or_buyer</code></td>
+<td>admin or wholesale_buyer</td>
+</tr>
+</tbody>
+</table>
+<h4 id="jwts">JWTs</h4>
+<p><code>core/security.py</code> signs and verifies tokens with <strong>RS256 Algorithm</strong> using a single symmetric RS256 key pair <code>JWT_PRIVATE_KEY</code> and <code>JWT_PUBLIC_KEY</code> , and the default token lifetime is <code>120</code> minutes — <strong>two hours</strong>. <code>sub</code> carries the user's UUID; there is no refresh token, no token rotation, and no MFA claim in the payload.</p>
+<ul>
+<li><strong>RS256 migration</strong> —(private key signs, public key verifies), so that any service that only needs to <em>validate</em> tokens never needs the signing secret. This invalidates every currently-issued token on cutover.</li>
+<li><strong>Access token expiry reduced to 2 hours.</strong> Short window for any manipulated token to remain valid.</li>
+</ul>
+<p>None of the above exists in the code yet. If you're picking up this work, <code>core/security.py</code>, <code>dependencies.py</code>, and the four login endpoints in <code>pamodzi/routers/auth.py</code> are where it lands.</p>
+<h4 id="logout-and-the-token-blacklist">Logout and the token blacklist</h4>
+<p>JWTs are stateless by default — there's no server-side way to "cancel" one before it expires, <code>TokenBlacklist</code> exists to solve. It's a two-column table (<code>token</code> as the primary key, <code>blacklisted_at</code>). <code>POST /auth/logout</code> currently only clears a cookie — it doesn't insert a row here — wiring logout to blacklist the bearer token is to increase the security of the platform. <code>get_current_user</code> queries this table on every single authenticated request, which means logout enforcement is real once a token is inserted, but also means every protected endpoint pays one extra DB round-trip. There's currently no cleanup job removing expired rows, so this table grows unbounded — worth a scheduled prune (delete rows older than the max token lifetime) before it's been in production very long.</p>
+<h4 id="rate-limiting">Rate limiting</h4>
+<p><code>core/security.py</code> defines a <code>slowapi</code> <code>Limiter</code> instance, and <code>main.py</code> now attaches it to the app (<code>app.state.limiter</code>), installs the 429 exception handler, and adds <code>SlowAPIMiddleware</code>. **Every individual endpoint in routers/auth.py has a <code>@limiter.limit(...)</code></p>
+<h4 id="cors">CORS</h4>
+<p>main.py allows all origins: allow_origins=["*"], with allow_credentials=True.</p>
+<h2 id="api-reference">API reference</h2>
+<p>Each endpoint below is shown as a method + path callout, colour-coded by HTTP verb, with its auth requirement pinned to the right — the same "readable endpoint" pattern used across the rest of this site.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Auth</label><label for="__tabbed_1_2">Farmers</label><label for="__tabbed_1_3">Users</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/login/admin/form</span><span class="endpoint-auth">No auth</span>
+</div>
+OAuth2 form (<code>username</code>, <code>password</code>) → access token, or a 2FA session token + email notice.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/login/buyer</span><span class="endpoint-auth">No auth</span>
+</div>
+<code>{email, password}</code> → 2FA session token.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/login/farmer</span><span class="endpoint-auth">No auth</span>
+</div>
+<code>{phone_number, pin}</code> → access token.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/login/agent</span><span class="endpoint-auth">No auth</span>
+</div>
+<code>{staff_id, password}</code> → access token.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/verify-2fa</span><span class="endpoint-auth">No auth</span>
+</div>
+<code>{twofa_session_token, otp_code}</code> → access token.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/forgot-password/email</span><span class="endpoint-auth">No auth</span>
+</div>
+<code>{email}</code> → generic success message.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/admin/onboard</span><span class="endpoint-auth">Admin</span>
+</div>
+<code>AdminRegister</code> → <code>{message, admin_id}</code>.</p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/auth/logout</span><span class="endpoint-auth">No auth</span>
+</div>
+Returns a success message.</p>
+</div>
+<div class="tabbed-block">
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/farmers/onboard</span><span class="endpoint-auth">Admin or Agent</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method get">GET</span><span class="endpoint-path">/farmers/</span><span class="endpoint-auth">Admin or Agent</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method get">GET</span><span class="endpoint-path">/farmers/{farmer_id}</span><span class="endpoint-auth">Admin or Agent</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method put">PUT</span><span class="endpoint-path">/farmers/{farmer_id}/verification</span><span class="endpoint-auth">Admin or Agent</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method delete">DELETE</span><span class="endpoint-path">/farmers/{farmer_id}</span><span class="endpoint-auth">Admin or Agent</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/farmers/me/change-pin</span><span class="endpoint-auth">Farmer (self)</span>
+</div></p>
+</div>
+<div class="tabbed-block">
+<p><div class="endpoint" markdown>
+<span class="endpoint-method get">GET</span><span class="endpoint-path">/users</span><span class="endpoint-auth">Admin</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method get">GET</span><span class="endpoint-path">/users/{user_id}</span><span class="endpoint-auth">Admin or Agent</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/users</span><span class="endpoint-auth">Admin</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/users/{user_id}/edit</span><span class="endpoint-auth">Admin</span>
+</div></p>
+<p><div class="endpoint" markdown>
+<span class="endpoint-method post">POST</span><span class="endpoint-path">/users/{user_id}/archive</span><span class="endpoint-auth">Admin</span>
+</div></p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../system%20architecture/" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Architecture">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System Architecture
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../database/" class="md-footer__link md-footer__link--next" aria-label="Next: Database">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Database
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,3301 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technical Documentation for the Pamodzi Platform">
+      
+      
+      
+        <link rel="canonical" href="https://github.com/akirachix/Phoenix_Technical_Documentation.git/mobile-app/">
+      
+      
+        <link rel="prev" href="../frontend_web/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/logo-assets/favicon-64.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Mobile App - Pamodzi Technical Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Quicksand";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/brand/pamodzi.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mobile-app" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-header__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Pamodzi Technical Documentation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Mobile App
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="custom" data-md-color-accent="custom"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Overview
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../system%20architecture/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  System Architecture
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../backend/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Backend
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../database/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Database
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../frontend_web/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Frontend Web
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Mobile App
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Pamodzi Technical Documentation" class="md-nav__button md-logo" aria-label="Pamodzi Technical Documentation" data-md-component="logo">
+      
+  <img src="../assets/images/logo-assets/pamodzi-mark.png" alt="logo">
+
+    </a>
+    Pamodzi Technical Documentation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system%20architecture/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    System Architecture
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Backend
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Database
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend_web/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Frontend Web
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Mobile App
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-application-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Application Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-the-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libmodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/models/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libscreens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/screens/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/services/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libwidgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/widgets/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libmaindart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/main.dart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Directories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screen-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screen Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widget-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wholesale-buyer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wholesale Buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooperative Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-roles-and-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Roles and Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Roles and Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wholesale-buyer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wholesale Buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-agent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooperative Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-based-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role-Based Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screens-and-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screens and Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Screens and Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demand-campaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demand Campaign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campaign-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campaign List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campaign-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campaign Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Produce Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-final-api-interaction-and-verification-states-to-be-documented-after-the-latest-mobile-implementation-is-merged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The final API interaction and verification states to be documented after the latest mobile implementation is merged.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The final API interaction and verification states to be documented after the latest mobile implementation is merged.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#farmer-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Farmer Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market Price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Financial Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-and-design-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI and Design Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-to-backend-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile-to-Backend Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-empty-and-error-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading, Empty and Error States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading, Empty and Error States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-and-connectivity-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline and Connectivity Behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-deployment-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Deployment Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flutter-dependencies-are-missing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter dependencies are missing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flutter-environment-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter environment problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-requests-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API requests fail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-database-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        → Open Database Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Purpose
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-users" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Supported Users
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#core-capabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core Capabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#high-level-application-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        High-Level Application Flow
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting Started
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Getting Started">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Prerequisites
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#clone-the-repository" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Clone the Repository
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#install-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Install Dependencies
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#run-the-application" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Run the Application
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verify-the-development-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verify the Development Environment
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tech-stack" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tech Stack
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tech Stack">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#external-references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        External References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Project Structure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project Structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lib" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libmodels" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/models/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libscreens" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/screens/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libservices" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/services/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libwidgets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/widgets/
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#libmaindart" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        lib/main.dart
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#platform-directories" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Platform Directories
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Architecture
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Architecture">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#screen-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screen Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Service Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#widget-layer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Widget Layer
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#authentication" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Authentication
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Authentication">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wholesale-buyer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wholesale Buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-agent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooperative Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#user-roles-and-access" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        User Roles and Access
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="User Roles and Access">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#wholesale-buyer_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Wholesale Buyer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cooperative-agent_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cooperative Agent
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Navigation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Navigation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#role-based-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Role-Based Navigation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#screens-and-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Screens and Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Screens and Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Login
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#home-dashboard" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Home Dashboard
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#demand-campaign" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Demand Campaign
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campaign-list" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campaign List
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#campaign-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Campaign Details
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#produce-verification" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Produce Verification
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-final-api-interaction-and-verification-states-to-be-documented-after-the-latest-mobile-implementation-is-merged" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The final API interaction and verification states to be documented after the latest mobile implementation is merged.
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The final API interaction and verification states to be documented after the latest mobile implementation is merged.">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#farmer-registration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Farmer Registration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#market-price" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Market Price
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#financial-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Financial Information
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ui-and-design-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        UI and Design Reference
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#api-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Integration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="API Integration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#api-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Reference
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mobile-to-backend-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Mobile-to-Backend Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API Service
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loading-empty-and-error-states" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading, Empty and Error States
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loading, Empty and Error States">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#loading" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loading
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#success" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Success
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Empty
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#error" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Error
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#offline-and-connectivity-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Offline and Connectivity Behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Testing
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Testing">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#running-tests" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Running Tests
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#current-status" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Current Status
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#future-deployment-flow" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Future Deployment Flow
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#troubleshooting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Troubleshooting
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Troubleshooting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#flutter-dependencies-are-missing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter dependencies are missing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flutter-environment-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Flutter environment problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#api-requests-fail" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        API requests fail
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#developer-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Developer Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-database-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        → Open Database Documentation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#documentation-maintenance" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Documentation Maintenance
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="mobile-app">Mobile App</h1>
+<p>The Pamodzi mobile application is a Flutter-based application that provides <strong>role-specific functionality for Wholesale Buyers and Cooperative Agents</strong>.</p>
+<p>Current mobile functionality includes authentication, demand campaign management, campaign monitoring, farmer registration, produce verification, market-price information, profile functionality, notifications, and financial information.</p>
+<p>The functionality available to a user depends on their assigned role and the navigation flow implemented in the application.</p>
+<p>The mobile application communicates with the Pamodzi backend API to retrieve and submit application data.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>The mobile application is currently under development and has not yet been deployed to production.
+</code></pre></div>
+<hr />
+<h2 id="overview">Overview</h2>
+<h3 id="purpose">Purpose</h3>
+<p>The mobile application provides a mobile interface for the operational activities performed by Wholesale Buyers and Cooperative Agents within the Pamodzi platform.</p>
+<p>The application provides different experiences based on the user's role.</p>
+<h3 id="supported-users">Supported Users</h3>
+<table>
+<thead>
+<tr>
+<th>User</th>
+<th>Primary responsibilities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Wholesale Buyer</strong></td>
+<td>Manage demand campaigns, monitor campaign activity, view market prices, and manage their account.</td>
+</tr>
+<tr>
+<td><strong>Cooperative Agent</strong></td>
+<td>Register farmers, verify produce and access relevant operational information.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="core-capabilities">Core Capabilities</h3>
+<p>The current mobile application includes the following major capabilities:</p>
+<ul>
+<li>User authentication</li>
+<li>Buyer registration and login</li>
+<li>Cooperative Agent authentication</li>
+<li>Dashboard and activity monitoring</li>
+<li>Demand campaign creation</li>
+<li>Campaign listing and monitoring</li>
+<li>Farmer registration</li>
+<li>Produce verification</li>
+<li>Market-price monitoring</li>
+<li>Profile management</li>
+<li>Theme switching</li>
+<li>Financial information</li>
+<li>Notifications</li>
+</ul>
+<hr />
+<h2 id="high-level-application-flow">High-Level Application Flow</h2>
+<p>The application follows a role-based flow.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>                         Pamodzi Mobile App
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>                                  |
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>                              Splash Screen
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>                                  |
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>                              Onboarding
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>                                  |
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>                              Authentication
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>                           /                  \
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                          /                    \
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>                Wholesale Buyer        Cooperative Agent
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>                       |                       |
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>                  Buyer Home              Agent Home
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>                       |                       |
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>             ┌─────────┼─────────┐       ┌────┼──────────┐
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>             |         |         |       |    |          |
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>          Campaigns  Market    Profile  Farmer Produce  Other
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>                     Prices             Registration Verification
+</code></pre></div>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>Before working on the mobile application, ensure that the development environment has the required Flutter and Dart tooling installed.</p>
+<p>The project is a Flutter application and can be developed using a supported IDE such as Android Studio or Visual Studio Code.</p>
+<p>Recommended prerequisites:</p>
+<ul>
+<li>Flutter SDK</li>
+<li>Dart SDK</li>
+<li>Android Studio or Visual Studio Code</li>
+<li>Android SDK for Android development</li>
+<li>Git</li>
+<li>A connected Android device or emulator</li>
+</ul>
+<h3 id="clone-the-repository">Clone the Repository</h3>
+<p>Clone the mobile application repository and navigate into the project directory.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>git<span class="w"> </span>clone<span class="w"> </span>&lt;mobile-repository-url&gt;
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">cd</span><span class="w"> </span>pamodzi
+</code></pre></div>
+<h3 id="install-dependencies">Install Dependencies</h3>
+<p>After opening the project, install the dependencies defined in <code>pubspec.yaml</code>.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>flutter<span class="w"> </span>pub<span class="w"> </span>get
+</code></pre></div>
+<h3 id="run-the-application">Run the Application</h3>
+<p>Start an emulator or connect a physical device and run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>flutter<span class="w"> </span>run
+</code></pre></div>
+<h3 id="verify-the-development-environment">Verify the Development Environment</h3>
+<p>Use the following command to identify missing Flutter or Android development dependencies:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>flutter<span class="w"> </span>doctor
+</code></pre></div>
+<p>Resolve any environment issues reported by <code>flutter doctor</code> before beginning development.</p>
+<hr />
+<h2 id="tech-stack">Tech Stack</h2>
+<table>
+<thead>
+<tr>
+<th>Technology</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flutter</strong></td>
+<td>Framework used to build the mobile application.</td>
+</tr>
+<tr>
+<td><strong>Dart</strong></td>
+<td>Programming language used by the Flutter application.</td>
+</tr>
+<tr>
+<td><strong>Pamodzi API</strong></td>
+<td>Backend API used by the mobile application for application data and operations.</td>
+</tr>
+<tr>
+<td><strong>OpenAPI / Swagger</strong></td>
+<td>Interactive reference for the backend API endpoints and schemas.</td>
+</tr>
+<tr>
+<td><strong>Git</strong></td>
+<td>Source-code version control.</td>
+</tr>
+<tr>
+<td><strong>Figma</strong></td>
+<td>UI/UX design reference for the mobile application.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="external-references">External References</h3>
+<p><strong>Pamodzi Backend API</strong></p>
+<p>The interactive Swagger/OpenAPI documentation provides the available backend endpoints, request parameters, response schemas, and API operations used when integrating the mobile application with the backend.</p>
+<p>→ <a href="https://pamodzi-bbe9f0671866.herokuapp.com/docs">Open Pamodzi API Documentation</a></p>
+<p><strong>Phoenix Mobile UI</strong></p>
+<p>The Figma file contains the mobile application's UI/UX designs and should be used as the visual reference when implementing or reviewing mobile screens.</p>
+<p>→ <a href="https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix?node-id=706-2&amp;t=fVk2cBM2jdGTpHzs-1">Open Phoenix Mobile UI in Figma</a></p>
+<hr />
+<h2 id="project-structure">Project Structure</h2>
+<p>The Flutter application is organized into platform configuration, assets, application code, tests, and supporting project files.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>pamodzi/
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>├── .github/
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>├── android/
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>├── assets/
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>├── build/
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>├── fonts/
+<a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>├── ios/
+<a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>├── linux/
+<a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>├── macos/
+<a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a>├── test/
+<a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>├── web/
+<a id="__codelineno-6-12" name="__codelineno-6-12" href="#__codelineno-6-12"></a>├── windows/
+<a id="__codelineno-6-13" name="__codelineno-6-13" href="#__codelineno-6-13"></a>│
+<a id="__codelineno-6-14" name="__codelineno-6-14" href="#__codelineno-6-14"></a>├── lib/
+<a id="__codelineno-6-15" name="__codelineno-6-15" href="#__codelineno-6-15"></a>│   ├── models/
+<a id="__codelineno-6-16" name="__codelineno-6-16" href="#__codelineno-6-16"></a>│   ├── screens/
+<a id="__codelineno-6-17" name="__codelineno-6-17" href="#__codelineno-6-17"></a>│   ├── services/
+<a id="__codelineno-6-18" name="__codelineno-6-18" href="#__codelineno-6-18"></a>│   ├── widgets/
+<a id="__codelineno-6-19" name="__codelineno-6-19" href="#__codelineno-6-19"></a>│   └── main.dart
+<a id="__codelineno-6-20" name="__codelineno-6-20" href="#__codelineno-6-20"></a>│
+<a id="__codelineno-6-21" name="__codelineno-6-21" href="#__codelineno-6-21"></a>├── .gitignore
+<a id="__codelineno-6-22" name="__codelineno-6-22" href="#__codelineno-6-22"></a>├── analysis_options.yaml
+<a id="__codelineno-6-23" name="__codelineno-6-23" href="#__codelineno-6-23"></a>├── pubspec.yaml
+<a id="__codelineno-6-24" name="__codelineno-6-24" href="#__codelineno-6-24"></a>├── pubspec.lock
+<a id="__codelineno-6-25" name="__codelineno-6-25" href="#__codelineno-6-25"></a>└── README.md
+</code></pre></div>
+<h3 id="lib"><code>lib/</code></h3>
+<p><code>lib/</code> contains the application's Dart source code. Most feature development should take place inside this directory.</p>
+<h3 id="libmodels"><code>lib/models/</code></h3>
+<p>The <code>models</code> directory contains Dart models representing data used by the application.</p>
+<p>Current models include:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>models/
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>├── campaign.dart
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>├── dashboard_model.dart
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>├── market_price_model.dart
+<a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a>├── notification_item.dart
+<a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>└── profile_model.dart
+</code></pre></div>
+<p>These models provide structured representations of application data used by screens and services.</p>
+<h3 id="libscreens"><code>lib/screens/</code></h3>
+<p>The <code>screens</code> directory contains the application's user-facing screens and feature-specific screen folders.</p>
+<p>Current areas include:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>screens/
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>├── campaign_details/
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>├── campaign_list/
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>├── demand_campaign_form/
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>├── main/
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>├── notifications/
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>├── agent-login.dart
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>├── buyer-login.dart
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>├── buyer-signup.dart
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>├── homescreen.dart
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>├── market_price_screen.dart
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>├── profile_screen.dart
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>└── splash_screen.dart
+</code></pre></div>
+<h3 id="libservices"><code>lib/services/</code></h3>
+<p>The <code>services</code> directory contains application services responsible for operations that are shared across screens.</p>
+<p>The current project contains:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>services/
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>└── api_service.dart
+</code></pre></div>
+<p><code>api_service.dart</code> is used for communication between the mobile application and backend services.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>The exact API methods and authentication handling to be documented here after the latest mobile code is merged and the service implementation is confirmed.
+</code></pre></div>
+<h3 id="libwidgets"><code>lib/widgets/</code></h3>
+<p>The <code>widgets</code> directory contains reusable UI components used by multiple screens.</p>
+<p>Current reusable components include:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>widgets/
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├── bottom_nav.dart
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>├── pamodzi_header.dart
+<a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a>└── status_badge.dart
+</code></pre></div>
+<h3 id="libmaindart"><code>lib/main.dart</code></h3>
+<p><code>main.dart</code> is the application's entry point. It initializes and starts the Flutter application.</p>
+<h3 id="platform-directories">Platform Directories</h3>
+<p>The platform-specific directories contain configuration required for running the Flutter application on different platforms:</p>
+<ul>
+<li><code>android/</code> — Android application configuration</li>
+<li><code>ios/</code> — iOS application configuration</li>
+<li><code>web/</code> — Web configuration</li>
+<li><code>windows/</code> — Windows configuration</li>
+<li><code>macos/</code> — macOS configuration</li>
+<li><code>linux/</code> — Linux configuration</li>
+</ul>
+<p>The mobile deployment process primarily concerns the Android and iOS directories.</p>
+<hr />
+<h2 id="application-architecture">Application Architecture</h2>
+<p>The current application is organized around screens, reusable widgets, models, and services.</p>
+<p>A simplified data flow is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>User Interaction
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>       |
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>       v
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>     Screen
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>       |
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>       v
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>    Service
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>       |
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a>       v
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a>   Pamodzi API
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>       |
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a>       v
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>    Backend
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a>       |
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>       v
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>   Application Data
+<a id="__codelineno-12-17" name="__codelineno-12-17" href="#__codelineno-12-17"></a>       |
+<a id="__codelineno-12-18" name="__codelineno-12-18" href="#__codelineno-12-18"></a>       v
+<a id="__codelineno-12-19" name="__codelineno-12-19" href="#__codelineno-12-19"></a>     Model
+<a id="__codelineno-12-20" name="__codelineno-12-20" href="#__codelineno-12-20"></a>       |
+<a id="__codelineno-12-21" name="__codelineno-12-21" href="#__codelineno-12-21"></a>       v
+<a id="__codelineno-12-22" name="__codelineno-12-22" href="#__codelineno-12-22"></a>     Screen
+</code></pre></div>
+<h3 id="screen-layer">Screen Layer</h3>
+<p>Screens are responsible for presenting information and receiving user interaction.</p>
+<p>Examples include:</p>
+<ul>
+<li>Login</li>
+<li>Home Dashboard</li>
+<li>Demand Campaign</li>
+<li>Campaign List</li>
+<li>Market Price</li>
+<li>Profile</li>
+<li>Farmer Registration</li>
+<li>Produce Verification</li>
+</ul>
+<h3 id="service-layer">Service Layer</h3>
+<p>Services provide a separation between the UI and backend communication.</p>
+<p>The API service is responsible for sending requests to the backend and returning the relevant data to the application.</p>
+<h3 id="model-layer">Model Layer</h3>
+<p>Models provide structured Dart representations of application data.</p>
+<p>For example:</p>
+<ul>
+<li>Campaign data</li>
+<li>Dashboard information</li>
+<li>Market-price information</li>
+<li>Notifications</li>
+<li>Profile information</li>
+</ul>
+<h3 id="widget-layer">Widget Layer</h3>
+<p>Reusable widgets provide shared UI components and help maintain consistent interfaces across screens.</p>
+<hr />
+<h2 id="authentication">Authentication</h2>
+<p>The mobile application supports authentication for both supported user types.</p>
+<h3 id="wholesale-buyer">Wholesale Buyer</h3>
+<p>The current buyer flow includes:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>Buyer
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>  |
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>  v
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>Buyer Login
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>  |
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>  ├── Existing account → Login
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>  |
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>  └── New user → Buyer Signup
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>  |
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>  v
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>Buyer Application
+</code></pre></div>
+<p>The buyer login screen is implemented through:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>buyer-login.dart
+</code></pre></div>
+<p>Buyer registration is implemented through:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>buyer-signup.dart
+</code></pre></div>
+<h3 id="cooperative-agent">Cooperative Agent</h3>
+<p>Cooperative Agents follow a separate authentication path:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>Cooperative Agent
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>       |
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>       v
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>Agent Login
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>       |
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>       v
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>Agent Application
+</code></pre></div>
+<p>The current project contains:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>agent-login.dart
+</code></pre></div>
+<p>The existing documentation indicates that the Agent authentication flow uses a <code>staff_id</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Authentication implementation</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>The exact token type, token storage mechanism, expiration handling, refresh behaviour, and logout implementation to be confirmed from the merged mobile authentication code.
+</code></pre></div>
+<hr />
+<h2 id="user-roles-and-access">User Roles and Access</h2>
+<p>The application distinguishes between Wholesale Buyers and Cooperative Agents.</p>
+<h3 id="wholesale-buyer_1">Wholesale Buyer</h3>
+<p>The buyer experience currently includes:</p>
+<ul>
+<li>Authentication</li>
+<li>Home dashboard</li>
+<li>Demand campaigns</li>
+<li>Campaign list</li>
+<li>Market prices</li>
+<li>Profile</li>
+<li>Financial information</li>
+</ul>
+<h3 id="cooperative-agent_1">Cooperative Agent</h3>
+<p>The Cooperative Agent experience currently includes:</p>
+<ul>
+<li>Agent authentication</li>
+<li>Farmer registration</li>
+<li>Produce verification</li>
+<li>Operational information</li>
+<li>Profile and other available application functionality</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>Role-based route protection and the final list of screens available to each role to be updated after the latest mobile implementation is merged.
+</code></pre></div>
+<hr />
+<h2 id="navigation">Navigation</h2>
+<p>Navigation is currently centered around the application's main screen and bottom navigation components.</p>
+<p>Relevant files include:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>screens/main/main_screen.dart
+<a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>widgets/bottom_nav.dart
+</code></pre></div>
+<p>The navigation structure should provide users with access to the features available to their role.</p>
+<h3 id="role-based-navigation">Role-Based Navigation</h3>
+<p>The intended high-level behaviour is:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>                         Authentication
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>                               |
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>                ┌──────────────┴──────────────┐
+<a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>                |                             |
+<a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>         Wholesale Buyer              Cooperative Agent
+<a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>                |                             |
+<a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>           Buyer Home                    Agent Home
+<a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>                |                             |
+<a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>        Buyer Features                Agent Features
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>The exact route names and route guards to be updated when the latest mobile code is merged.
+</code></pre></div></p>
+<hr />
+<h2 id="screens-and-features">Screens and Features</h2>
+<h3 id="login">Login</h3>
+<p><img alt="Pamodzi Login" src="../assets/images/mobile-screens/screen-login.png" width="220" /></p>
+<p>The login screen provides authentication for application users.</p>
+<p>Wholesale Buyers authenticate through the buyer login flow, while Cooperative Agents use their separate authentication path.</p>
+<p><strong>Implementation references:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>lib/screens/buyer-login.dart
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>lib/screens/agent-login.dart
+</code></pre></div>
+<p><strong>Related resources:</strong></p>
+<ul>
+<li><a href="https://pamodzi-bbe9f0671866.herokuapp.com/docs">Backend API Documentation</a></li>
+<li><a href="https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix?node-id=706-2&amp;t=fVk2cBM2jdGTpHzs-1">Phoenix Mobile UI</a></li>
+</ul>
+<hr />
+<h3 id="home-dashboard">Home Dashboard</h3>
+<p><img alt="Pamodzi Home Dashboard" src="../assets/images/mobile-screens/screen-home-dashboard.png" width="220" /></p>
+<p>The dashboard provides an overview of operational activity.</p>
+<p>The current dashboard includes information such as:</p>
+<ul>
+<li>Demand campaign value</li>
+<li>Aggregated mass</li>
+<li>Cooperative hub count</li>
+<li>Daily volume</li>
+<li>Weekly volume</li>
+<li>Aggregation progress</li>
+<li>Recent activity</li>
+<li>Provincial activity information</li>
+</ul>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>lib/screens/homescreen.dart
+</code></pre></div>
+<hr />
+<h3 id="demand-campaign">Demand Campaign</h3>
+<p><img alt="Pamodzi Demand Campaign" src="../assets/images/mobile-screens/screen-demand-campaign.png" width="220" /></p>
+<p>The Demand Campaign screen allows a Wholesale Buyer to create a funded demand campaign.</p>
+<p>The current form captures:</p>
+<ul>
+<li>Crop</li>
+<li>Quantity</li>
+<li>Grade</li>
+<li>Moisture</li>
+<li>Province</li>
+</ul>
+<p>The campaign information corresponds to the backend demand-campaign functionality.</p>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a>lib/screens/demand_campaign_form/demand_campaign.dart
+</code></pre></div>
+<p><strong>Related documentation:</strong></p>
+<ul>
+<li><a href="https://docs.google.com/document/d/1XQybjymnVYrOXz7y_ZkNjomQrStWmoba8YM4qL-QWY4/edit?usp=sharing">Database Documentation</a></li>
+<li><a href="https://pamodzi-bbe9f0671866.herokuapp.com/docs">Pamodzi API Documentation</a></li>
+<li><a href="https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix?node-id=706-2&amp;t=fVk2cBM2jdGTpHzs-1">Phoenix Mobile UI</a></li>
+</ul>
+<hr />
+<h3 id="campaign-list">Campaign List</h3>
+<p>The Campaign List provides an overview of campaigns and their current states.</p>
+<p>The current documentation identifies campaign states including:</p>
+<ul>
+<li>Active</li>
+<li>Aggregating</li>
+<li>Fulfilled</li>
+</ul>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a>lib/screens/campaign_list/campaign_list.dart
+</code></pre></div>
+<hr />
+<h3 id="campaign-details">Campaign Details</h3>
+<p>The Campaign Details feature provides information about an individual campaign.</p>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a>lib/screens/campaign_details/campaign_details.dart
+</code></pre></div>
+<hr />
+<h3 id="produce-verification">Produce Verification</h3>
+<p>Produce Verification supports the Cooperative Agent workflow for reviewing and approving or rejecting a farmer's produce listing.</p>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a>ProduceVerificationBody
+</code></pre></div>
+<h2 id="the-final-api-interaction-and-verification-states-to-be-documented-after-the-latest-mobile-implementation-is-merged"><div class="highlight"><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a>The final API interaction and verification states to be documented after the latest mobile implementation is merged.
+</code></pre></div></h2>
+<h3 id="farmer-registration">Farmer Registration</h3>
+<p>Farmer Registration allows a Cooperative Agent to register a farmer on the farmer's behalf.</p>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a>FarmerRegistrationBody
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a>The final form fields, validation rules, API endpoint, and success/error behaviour to be updated after the latest implementation is merged.
+</code></pre></div>
+<hr />
+<h3 id="market-price">Market Price</h3>
+<p>The Market Price screen displays crop-based market price information and price trends.</p>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a>lib/screens/market_price_screen.dart
+</code></pre></div>
+<hr />
+<h3 id="profile">Profile</h3>
+<p><img alt="Pamodzi Profile" src="../assets/images/mobile-screens/screen-profile-logout.png" width="220" /></p>
+<p>The Profile screen provides account-related functionality and application settings.</p>
+<p>The current implementation includes:</p>
+<ul>
+<li>Profile information</li>
+<li>Theme switching</li>
+<li>Logout</li>
+<li>Logout confirmation</li>
+</ul>
+<p><strong>Implementation reference:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a>lib/screens/profile_screen.dart
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a>The final authentication/session behaviour to be updated when the merged implementation is available.
+</code></pre></div>
+<hr />
+<h3 id="notifications">Notifications</h3>
+<p>The application includes a notifications area for displaying relevant user notifications.</p>
+<p><strong>Current project location:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a>lib/screens/notifications/
+</code></pre></div>
+<p>The notification data model is:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-36-1" name="__codelineno-36-1" href="#__codelineno-36-1"></a>lib/models/notification_item.dart
+</code></pre></div>
+<hr />
+<h3 id="financial-information">Financial Information</h3>
+<p>Financial information is part of the current mobile application feature set.</p>
+<p>The current architecture documentation references:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-37-1" name="__codelineno-37-1" href="#__codelineno-37-1"></a>FinancialDetailsScreen
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-38-1" name="__codelineno-38-1" href="#__codelineno-38-1"></a>The final screen location and API integration to be verified against the merged mobile implementation.
+</code></pre></div>
+<hr />
+<h2 id="ui-and-design-reference">UI and Design Reference</h2>
+<p>The Figma design is the primary visual reference for the mobile interface.</p>
+<p>Developers should use the Figma file when:</p>
+<ul>
+<li>Implementing new screens</li>
+<li>Matching spacing and component layouts</li>
+<li>Checking typography</li>
+<li>Checking component states</li>
+<li>Verifying navigation flows</li>
+<li>Comparing implemented screens with approved designs</li>
+</ul>
+<p><strong>Design reference:</strong></p>
+<p>→ <a href="https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix?node-id=706-2&amp;t=fVk2cBM2jdGTpHzs-1">Open Phoenix Mobile UI in Figma</a></p>
+<hr />
+<h2 id="api-integration">API Integration</h2>
+<p>The mobile application communicates with the Pamodzi backend API.</p>
+<h3 id="api-reference">API Reference</h3>
+<p>The authoritative interactive API reference is the Pamodzi Swagger/OpenAPI documentation:</p>
+<p>→ <a href="https://pamodzi-bbe9f0671866.herokuapp.com/docs">Open Pamodzi API Documentation</a></p>
+<p>Use the API documentation to verify:</p>
+<ul>
+<li>Available endpoints</li>
+<li>HTTP methods</li>
+<li>Request parameters</li>
+<li>Request bodies</li>
+<li>Authentication requirements</li>
+<li>Response structures</li>
+<li>Error responses</li>
+<li>Available backend resources</li>
+</ul>
+<h3 id="mobile-to-backend-flow">Mobile-to-Backend Flow</h3>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-39-1" name="__codelineno-39-1" href="#__codelineno-39-1"></a>Flutter Screen
+<a id="__codelineno-39-2" name="__codelineno-39-2" href="#__codelineno-39-2"></a>      |
+<a id="__codelineno-39-3" name="__codelineno-39-3" href="#__codelineno-39-3"></a>      v
+<a id="__codelineno-39-4" name="__codelineno-39-4" href="#__codelineno-39-4"></a>API Service
+<a id="__codelineno-39-5" name="__codelineno-39-5" href="#__codelineno-39-5"></a>      |
+<a id="__codelineno-39-6" name="__codelineno-39-6" href="#__codelineno-39-6"></a>      v
+<a id="__codelineno-39-7" name="__codelineno-39-7" href="#__codelineno-39-7"></a>HTTP Request
+<a id="__codelineno-39-8" name="__codelineno-39-8" href="#__codelineno-39-8"></a>      |
+<a id="__codelineno-39-9" name="__codelineno-39-9" href="#__codelineno-39-9"></a>      v
+<a id="__codelineno-39-10" name="__codelineno-39-10" href="#__codelineno-39-10"></a>Pamodzi Backend API
+<a id="__codelineno-39-11" name="__codelineno-39-11" href="#__codelineno-39-11"></a>      |
+<a id="__codelineno-39-12" name="__codelineno-39-12" href="#__codelineno-39-12"></a>      v
+<a id="__codelineno-39-13" name="__codelineno-39-13" href="#__codelineno-39-13"></a>Backend Processing
+<a id="__codelineno-39-14" name="__codelineno-39-14" href="#__codelineno-39-14"></a>      |
+<a id="__codelineno-39-15" name="__codelineno-39-15" href="#__codelineno-39-15"></a>      v
+<a id="__codelineno-39-16" name="__codelineno-39-16" href="#__codelineno-39-16"></a>API Response
+<a id="__codelineno-39-17" name="__codelineno-39-17" href="#__codelineno-39-17"></a>      |
+<a id="__codelineno-39-18" name="__codelineno-39-18" href="#__codelineno-39-18"></a>      v
+<a id="__codelineno-39-19" name="__codelineno-39-19" href="#__codelineno-39-19"></a>Dart Model
+<a id="__codelineno-39-20" name="__codelineno-39-20" href="#__codelineno-39-20"></a>      |
+<a id="__codelineno-39-21" name="__codelineno-39-21" href="#__codelineno-39-21"></a>      v
+<a id="__codelineno-39-22" name="__codelineno-39-22" href="#__codelineno-39-22"></a>Flutter UI
+</code></pre></div>
+<h3 id="api-service">API Service</h3>
+<p>The current project contains:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-40-1" name="__codelineno-40-1" href="#__codelineno-40-1"></a>lib/services/api_service.dart
+</code></pre></div>
+<p>This service is the main location identified for backend API communication.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-41-1" name="__codelineno-41-1" href="#__codelineno-41-1"></a>Individual endpoint mappings to be added once the latest mobile implementation is merged.
+</code></pre></div>
+<hr />
+<h2 id="loading-empty-and-error-states">Loading, Empty and Error States</h2>
+<p>Every API-driven feature should account for the following states:</p>
+<h3 id="loading">Loading</h3>
+<p>The application should provide appropriate feedback while data is being retrieved or submitted.</p>
+<h3 id="success">Success</h3>
+<p>After a successful API operation, the application should update the relevant UI and provide the appropriate navigation or confirmation.</p>
+<h3 id="empty">Empty</h3>
+<p>When an API returns no applicable data, the screen should provide a meaningful empty state rather than appearing broken or blank.</p>
+<h3 id="error">Error</h3>
+<p>When an API request fails, the application should provide an understandable error message and, where appropriate, allow the user to retry.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-42-1" name="__codelineno-42-1" href="#__codelineno-42-1"></a>The exact error-handling implementation to be documented after the latest mobile code is merged.
+</code></pre></div>
+<hr />
+<h2 id="offline-and-connectivity-behaviour">Offline and Connectivity Behaviour</h2>
+<p>The current project documentation identifies low-connectivity rural environments as an important consideration.</p>
+<p>The intended application behaviour includes local persistence and delayed synchronization.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-43-1" name="__codelineno-43-1" href="#__codelineno-43-1"></a>The exact local-storage technology, synchronization mechanism, conflict handling, and offline-supported features to be confirmed against the latest mobile implementation.
+</code></pre></div>
+<hr />
+<h2 id="testing">Testing</h2>
+<p>The Flutter project contains a test directory:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-44-1" name="__codelineno-44-1" href="#__codelineno-44-1"></a>test/
+</code></pre></div>
+<p>Mobile changes should be tested before being merged.</p>
+<p>Testing should cover, where applicable:</p>
+<ul>
+<li>Authentication</li>
+<li>Navigation</li>
+<li>Form validation</li>
+<li>API interactions</li>
+<li>Model parsing</li>
+<li>User-role behaviour</li>
+<li>Loading states</li>
+<li>Empty states</li>
+<li>Error states</li>
+<li>Critical user flows</li>
+</ul>
+<h3 id="running-tests">Running Tests</h3>
+<p>Run the Flutter test suite with:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-45-1" name="__codelineno-45-1" href="#__codelineno-45-1"></a>flutter<span class="w"> </span><span class="nb">test</span>
+</code></pre></div>
+<p>For changes affecting a specific feature, developers should also perform manual testing on an emulator or physical device.</p>
+<hr />
+<h2 id="deployment">Deployment</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-46-1" name="__codelineno-46-1" href="#__codelineno-46-1"></a>The mobile application is currently under development and has **not yet been deployed to production**.
+</code></pre></div>
+<p>The final deployment process will be documented once the team's deployment target and release process are confirmed.</p>
+<h3 id="current-status">Current Status</h3>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Mobile application development</td>
+<td>In progress</td>
+</tr>
+<tr>
+<td>Backend API</td>
+<td>Available</td>
+</tr>
+<tr>
+<td>Figma UI</td>
+<td>Available</td>
+</tr>
+<tr>
+<td>Production mobile deployment</td>
+<td>Not yet deployed</td>
+</tr>
+<tr>
+<td>Appetize deployment</td>
+<td>To be confirmed</td>
+</tr>
+<tr>
+<td>Final release process</td>
+<td>To be documented</td>
+</tr>
+</tbody>
+</table>
+<h3 id="future-deployment-flow">Future Deployment Flow</h3>
+<p>The expected deployment process will follow a flow similar to:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-47-1" name="__codelineno-47-1" href="#__codelineno-47-1"></a>Development
+<a id="__codelineno-47-2" name="__codelineno-47-2" href="#__codelineno-47-2"></a>     |
+<a id="__codelineno-47-3" name="__codelineno-47-3" href="#__codelineno-47-3"></a>     v
+<a id="__codelineno-47-4" name="__codelineno-47-4" href="#__codelineno-47-4"></a>Feature Testing
+<a id="__codelineno-47-5" name="__codelineno-47-5" href="#__codelineno-47-5"></a>     |
+<a id="__codelineno-47-6" name="__codelineno-47-6" href="#__codelineno-47-6"></a>     v
+<a id="__codelineno-47-7" name="__codelineno-47-7" href="#__codelineno-47-7"></a>Integration Testing
+<a id="__codelineno-47-8" name="__codelineno-47-8" href="#__codelineno-47-8"></a>     |
+<a id="__codelineno-47-9" name="__codelineno-47-9" href="#__codelineno-47-9"></a>     v
+<a id="__codelineno-47-10" name="__codelineno-47-10" href="#__codelineno-47-10"></a>Release Build
+<a id="__codelineno-47-11" name="__codelineno-47-11" href="#__codelineno-47-11"></a>     |
+<a id="__codelineno-47-12" name="__codelineno-47-12" href="#__codelineno-47-12"></a>     v
+<a id="__codelineno-47-13" name="__codelineno-47-13" href="#__codelineno-47-13"></a>Deployment Platform
+<a id="__codelineno-47-14" name="__codelineno-47-14" href="#__codelineno-47-14"></a>     |
+<a id="__codelineno-47-15" name="__codelineno-47-15" href="#__codelineno-47-15"></a>     v
+<a id="__codelineno-47-16" name="__codelineno-47-16" href="#__codelineno-47-16"></a>Release / Distribution
+</code></pre></div>
+<hr />
+<h2 id="troubleshooting">Troubleshooting</h2>
+<h3 id="flutter-dependencies-are-missing">Flutter dependencies are missing</h3>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-48-1" name="__codelineno-48-1" href="#__codelineno-48-1"></a>flutter<span class="w"> </span>pub<span class="w"> </span>get
+</code></pre></div>
+<h3 id="flutter-environment-problems">Flutter environment problems</h3>
+<p>Run:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-49-1" name="__codelineno-49-1" href="#__codelineno-49-1"></a>flutter<span class="w"> </span>doctor
+</code></pre></div>
+<p>Review the reported issues and resolve the missing Android SDK, emulator, or Flutter configuration requirements.</p>
+<h3 id="api-requests-fail">API requests fail</h3>
+<p>Check:</p>
+<ol>
+<li>The backend API is available.</li>
+<li>The application is using the correct backend environment.</li>
+<li>The request matches the API documentation.</li>
+<li>Authentication credentials/token requirements are satisfied.</li>
+<li>The request payload matches the backend schema.</li>
+</ol>
+<p>Use the <a href="https://pamodzi-bbe9f0671866.herokuapp.com/docs">Pamodzi API Documentation</a> to verify endpoint requirements.</p>
+<hr />
+<h3 id="developer-resources">Developer Resources</h3>
+<p><strong>Pamodzi API Documentation</strong></p>
+<p>Interactive Swagger/OpenAPI documentation for the Pamodzi backend. Use this reference when implementing or troubleshooting mobile-to-backend API integrations, checking available endpoints, request parameters, response schemas, and API operations.</p>
+<p>→ <a href="https://pamodzi-bbe9f0671866.herokuapp.com/docs">Open Pamodzi API Documentation</a></p>
+<p><strong>Phoenix Mobile UI</strong></p>
+<p>The Figma design file containing the mobile application's UI designs and user flows. Use this as the visual reference when implementing or reviewing mobile screens.</p>
+<p>→ <a href="https://www.figma.com/design/mesXrW3dt9qWCyJqgbcakJ/Phoenix?node-id=706-2&amp;t=fVk2cBM2jdGTpHzs-1">Open Phoenix Mobile UI in Figma</a></p>
+<p><strong>Security Documentation</strong></p>
+<p>Documentation covering the security mechanisms and authentication-related behaviour of the Pamodzi platform. Use this reference when working on authentication, authorization, sessions, and other security-related functionality.</p>
+<p>→ <a href="https://docs.google.com/document/d/1M1G0d1_iJ-TlkoZ_JsAh7D9aeC_B8WKWebvilvGIwz0/edit?usp=sharing">Open Security Documentation</a></p>
+<p><strong>Database Documentation</strong></p>
+<p>Reference documentation for the Pamodzi database, including the application's data entities and their relationships. Use this when you need to understand how mobile application data relates to the backend data model.</p>
+<h2 id="open-database-documentation">→ <a href="https://docs.google.com/document/d/1XQybjymnVYrOXz7y_ZkNjomQrStWmoba8YM4qL-QWY4/edit?usp=sharing">Open Database Documentation</a></h2>
+<h2 id="documentation-maintenance">Documentation Maintenance</h2>
+<p>This document should be updated whenever a significant mobile application change is introduced.</p>
+<p>Update the relevant section when:</p>
+<ul>
+<li>A new screen is added</li>
+<li>A screen is removed</li>
+<li>A user role changes</li>
+<li>Navigation changes</li>
+<li>An API endpoint changes</li>
+<li>A new API integration is introduced</li>
+<li>A new dependency is added</li>
+<li>Authentication behaviour changes</li>
+<li>Offline behaviour changes</li>
+<li>Deployment procedures change</li>
+<li>The Figma design changes</li>
+</ul>
+<h1 id="mobile-app_1">Mobile App</h1>
+<p>The mobile app (Flutter) is used by Cooperative Agents and Wholesale Buyers for field operations, campaign management, and finance tracking.</p>
+<p><img alt="Pamodzi mobile home dashboard" src="../assets/images/mobile-screens/screen-home-dashboard.png" /></p>
+<h2 id="screens">Screens</h2>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11 7 9.6 8.4l2.6 2.6H2v2h10.2l-2.6 2.6L11 17l5-5zm9 12h-8v2h8c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2h-8v2h8z"/></svg></span> <strong>Login</strong></p>
+<hr />
+<p>Buyer login/signup plus a separate agent login path (<code>agent-login.dart</code>, <code>buyer-login.dart</code>, <code>buyer-signup.dart</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 3v6h8V3m-8 18h8V11h-8M3 21h8v-6H3m0-2h8V3H3z"/></svg></span> <strong>Home Dashboard</strong></p>
+<hr />
+<p>Campaign KPIs, aggregation progress, activity feed (<code>homescreen.dart</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m13.13 22.19-1.63-3.83c1.57-.58 3.04-1.36 4.4-2.27zM5.64 12.5l-3.83-1.63 6.1-2.77C7 9.46 6.22 10.93 5.64 12.5M21.61 2.39S16.66.269 11 5.93c-2.19 2.19-3.5 4.6-4.35 6.71-.28.75-.09 1.57.46 2.13l2.13 2.12c.55.56 1.37.74 2.12.46A19.1 19.1 0 0 0 18.07 13c5.66-5.66 3.54-10.61 3.54-10.61m-7.07 7.07c-.78-.78-.78-2.05 0-2.83s2.05-.78 2.83 0c.77.78.78 2.05 0 2.83s-2.05.78-2.83 0m-5.66 7.07-1.41-1.41zM6.24 22l3.64-3.64c-.34-.09-.67-.24-.97-.45L4.83 22zM2 22h1.41l4.77-4.76-1.42-1.41L2 20.59zm0-2.83 4.09-4.08c-.21-.3-.36-.62-.45-.97L2 17.76z"/></svg></span> <strong>Demand Campaign</strong></p>
+<hr />
+<p>Buyer launches a funded campaign — crop, quantity, grade, moisture, province (<code>demand_campaign_form/demand_campaign.dart</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 19.2c-2.5 0-4.71-1.28-6-3.2.03-2 4-3.1 6-3.1s5.97 1.1 6 3.1a7.23 7.23 0 0 1-6 3.2M12 5a3 3 0 0 1 3 3 3 3 0 0 1-3 3 3 3 0 0 1-3-3 3 3 0 0 1 3-3m0-3A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10c0-5.53-4.5-10-10-10"/></svg></span> <strong>Profile</strong></p>
+<hr />
+<p>Account settings, theme switching (<code>profile_screen.dart</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3h-4.18C14.4 1.84 13.3 1 12 1s-2.4.84-2.82 2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2M7 8h2v4H8V9H7zm3 9v1H7v-.92L9 15H7v-1h2.25c.41 0 .75.34.75.75 0 .2-.08.39-.21.52L8.12 17zm1-13c0-.55.45-1 1-1s1 .45 1 1-.45 1-1 1-1-.45-1-1m6 13h-5v-2h5zm0-6h-5V9h5z"/></svg></span> <strong>Campaign List</strong></p>
+<hr />
+<p>Active/aggregating/fulfilled campaigns at a glance (<code>campaign_list/campaign_list.dart</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 12-2.44-2.78.34-3.68-3.61-.82-1.89-3.18L12 3 8.6 1.54 6.71 4.72l-3.61.81.34 3.68L1 12l2.44 2.78-.34 3.69 3.61.82 1.89 3.18L12 21l3.4 1.46 1.89-3.18 3.61-.82-.34-3.68zm-13 5-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9z"/></svg></span> <strong>Produce Verification</strong></p>
+<hr />
+<p>Agent flow for approving/rejecting a farmer's listing (<code>ProduceVerificationBody</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 14c-2.67 0-8 1.33-8 4v2h16v-2c0-2.67-5.33-4-8-4m-9-4V7H4v3H1v2h3v3h2v-3h3v-2m6 2a4 4 0 0 0 4-4 4 4 0 0 0-4-4 4 4 0 0 0-4 4 4 4 0 0 0 4 4"/></svg></span> <strong>Farmer Registration</strong></p>
+<hr />
+<p>Agent onboards a farmer on their behalf (<code>FarmerRegistrationBody</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m16 11.78 4.24-7.33 1.73 1-5.23 9.05-6.51-3.75L5.46 19H22v2H2V3h2v14.54L9.5 8z"/></svg></span> <strong>Market Price</strong></p>
+<hr />
+<p>Price trend charts by crop (<code>MarketPriceScreen</code>).</p>
+</li>
+</ul>
+</div>
+<h2 id="screens-in-detail">Screens in Detail</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:4"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><input id="__tabbed_1_4" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Login</label><label for="__tabbed_1_2">Home Dashboard</label><label for="__tabbed_1_3">Demand Campaign</label><label for="__tabbed_1_4">Profile</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><img alt="Login" src="../assets/images/mobile-screens/screen-login.png" /></p>
+<p>Buyer login with email/password. A separate "Login as Cooperative Agent" button routes to <code>staff_id</code>-based auth instead.</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Home Dashboard" src="../assets/images/mobile-screens/screen-home-dashboard.png" /></p>
+<p>Demand campaign value, mass aggregated, cooperative hub count, daily/weekly volume, aggregation-progress ring, and a recent-activity feed by province.</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Demand Campaign" src="../assets/images/mobile-screens/screen-demand-campaign.png" /></p>
+<p>Crop, quantity, grade, moisture, and province — maps directly to the <code>demandcampaign</code> table in <a href="../database/">Database</a>.</p>
+</div>
+<div class="tabbed-block">
+<p><img alt="Profile" src="../assets/images/mobile-screens/screen-profile-logout.png" /></p>
+<p>Confirm-before-logout modal, consistent with the token-blacklist logout flow in Security.</p>
+</div>
+</div>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Remaining screens</p>
+<p>Campaign List, Produce Verification, Farmer Registration, and Market Price don't have exports yet — add them here the same way once available.</p>
+</div>
+<h2 id="architecture-pattern">Architecture Pattern</h2>
+<p>Navigation routing, screen state lifecycle, and view component structure are centered on <code>MainScreen</code> and <code>PamodziBottomNav</code>.</p>
+<div class="grid cards">
+<ul>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16h-4v2h4v2l3-3-3-3zM11 4C8.8 4 7 5.8 7 8s1.8 4 4 4 4-1.8 4-4-1.8-4-4-4m0 10c-4.4 0-8 1.8-8 4v2h9.5c-.3-.8-.5-1.6-.5-2.5 0-1.2.3-2.3.9-3.4-.6 0-1.2-.1-1.9-.1"/></svg></span> <strong>Onboarding &amp; Authentication</strong></p>
+<hr />
+<p>Onboarding carousel (<code>PamodziOnboardingFlow</code>), agent login (<code>AgentLoginScreen</code>), buyer login/signup (<code>buyer-login.dart</code>, <code>buyer-signup.dart</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 4v7.26c-1.8.64-3 2.34-3 4.24C2 18 4 20 6.5 20c2.29 0 4.21-1.72 4.47-4h4.2c-.11.32-.17.66-.17 1a3 3 0 0 0 3 3 3 3 0 0 0 3-3c0-.34-.06-.68-.18-1H22v-3c0-1.11-.89-2-2-2h-4.96l-1.39-7zm2 2h5l1 5v3h-2.26A4.53 4.53 0 0 0 7 11.03zm-.5 7.25a2.25 2.25 0 0 1 2.25 2.25 2.25 2.25 0 0 1-2.25 2.25 2.25 2.25 0 0 1-2.25-2.25 2.25 2.25 0 0 1 2.25-2.25M18 15.5a1.5 1.5 0 0 1 1.5 1.5 1.5 1.5 0 0 1-1.5 1.5 1.5 1.5 0 0 1-1.5-1.5 1.5 1.5 0 0 1 1.5-1.5"/></svg></span> <strong>Operations</strong></p>
+<hr />
+<p>Farmer registration (<code>FarmerRegistrationBody</code>), produce quality verification (<code>ProduceVerificationBody</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5.06 3c-.43 0-.84.14-1.22.42s-.6.64-.7 1.08L2.11 8.91c-.25 1.09-.05 2.01.58 2.82.12.12.24.24.35.34.59.57 1.24.93 2.18.93s1.69-.41 2.25-.95c.63.62 1.39.95 2.33.95.84 0 1.64-.37 2.2-.93.68.63 1.45.93 2.3.93.87 0 1.61-.33 2.24-.95.57.57 1.32.95 2.27.95s1.62-.35 2.19-.94c.09-.09.18-.19.28-.29.66-.82.86-1.77.61-2.86L20.86 4.5c-.13-.44-.36-.8-.73-1.08A1.88 1.88 0 0 0 18.94 3m-.05 1.97 1.08 4.41c.09.43 0 .82-.28 1.17-.25.31-.56.45-.94.45-.31 0-.58-.1-.8-.34-.22-.23-.34-.5-.37-.82L16.97 5M5.06 5h1.97l-.61 4.84C6.3 10.63 5.91 11 5.25 11c-.41 0-.72-.14-.94-.45-.28-.35-.37-.74-.28-1.17M9.05 5H11v4.7c0 .35-.11.65-.36.92-.25.26-.56.38-.94.38-.34 0-.63-.12-.86-.41S8.5 10 8.5 9.66V9.5M13 5h1.95l.55 4.5c.08.42 0 .77-.29 1.07-.26.3-.6.43-1.01.43-.31 0-.59-.12-.84-.38A1.3 1.3 0 0 1 13 9.7M3 14.03V19c0 1.11.89 2 2 2h14a2 2 0 0 0 2-2v-4.95c-.55.58-1.25.91-2 .95-1 .03-1.75-.26-2.46-.95-.6.6-1.4.95-2.24.95-.9 0-1.7-.36-2.3-.93-.57.57-1.35.93-2.22.93-.91 0-1.71-.35-2.31-.95-.58.59-1.37.95-2.24.95-.9 0-1.57-.35-2.23-.97"/></svg></span> <strong>Marketplace &amp; Finance</strong></p>
+<hr />
+<p>Active demand campaigns (<code>CampaignListBody</code>), market price charts (<code>MarketPriceScreen</code>), financial statements (<code>FinancialDetailsScreen</code>).</p>
+</li>
+<li>
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-1l2.11-1.63c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.31-.61-.22l-2.49 1c-.52-.39-1.06-.73-1.69-.98l-.37-2.65A.506.506 0 0 0 14 2h-4c-.25 0-.46.18-.5.42l-.37 2.65c-.63.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64L4.57 11c-.04.34-.07.67-.07 1s.03.65.07.97l-2.11 1.66c-.19.15-.25.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1.01c.52.4 1.06.74 1.69.99l.37 2.65c.04.24.25.42.5.42h4c.25 0 .46-.18.5-.42l.37-2.65c.63-.26 1.17-.59 1.69-.99l2.49 1.01c.22.08.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64z"/></svg></span> <strong>Settings</strong></p>
+<hr />
+<p>Dynamic light/dark theme switching, user profile management (<code>ProfileScreen</code>).</p>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Offline Behavior</p>
+<p>Local data persistence with delayed synchronization, built for low-connectivity rural regions.</p>
+</div>
+<h2 id="project-structure_1">Project Structure</h2>
+<details class="note">
+<summary>pamodzi/ — full Flutter project tree</summary>
+</details>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-50-1" name="__codelineno-50-1" href="#__codelineno-50-1"></a>    pamodzi/
+<a id="__codelineno-50-2" name="__codelineno-50-2" href="#__codelineno-50-2"></a>    ├── .github/
+<a id="__codelineno-50-3" name="__codelineno-50-3" href="#__codelineno-50-3"></a>    ├── android/
+<a id="__codelineno-50-4" name="__codelineno-50-4" href="#__codelineno-50-4"></a>    ├── assets/
+<a id="__codelineno-50-5" name="__codelineno-50-5" href="#__codelineno-50-5"></a>    ├── build/
+<a id="__codelineno-50-6" name="__codelineno-50-6" href="#__codelineno-50-6"></a>    ├── fonts/
+<a id="__codelineno-50-7" name="__codelineno-50-7" href="#__codelineno-50-7"></a>    ├── ios/
+<a id="__codelineno-50-8" name="__codelineno-50-8" href="#__codelineno-50-8"></a>    ├── linux/
+<a id="__codelineno-50-9" name="__codelineno-50-9" href="#__codelineno-50-9"></a>    ├── macos/
+<a id="__codelineno-50-10" name="__codelineno-50-10" href="#__codelineno-50-10"></a>    ├── test/
+<a id="__codelineno-50-11" name="__codelineno-50-11" href="#__codelineno-50-11"></a>    ├── web/
+<a id="__codelineno-50-12" name="__codelineno-50-12" href="#__codelineno-50-12"></a>    ├── windows/
+<a id="__codelineno-50-13" name="__codelineno-50-13" href="#__codelineno-50-13"></a>    ├── lib/
+<a id="__codelineno-50-14" name="__codelineno-50-14" href="#__codelineno-50-14"></a>    │   ├── models/
+<a id="__codelineno-50-15" name="__codelineno-50-15" href="#__codelineno-50-15"></a>    │   │   ├── campaign.dart
+<a id="__codelineno-50-16" name="__codelineno-50-16" href="#__codelineno-50-16"></a>    │   │   ├── dashboard_model.dart
+<a id="__codelineno-50-17" name="__codelineno-50-17" href="#__codelineno-50-17"></a>    │   │   ├── market_price_model.dart
+<a id="__codelineno-50-18" name="__codelineno-50-18" href="#__codelineno-50-18"></a>    │   │   ├── notification_item.dart
+<a id="__codelineno-50-19" name="__codelineno-50-19" href="#__codelineno-50-19"></a>    │   │   └── profile_model.dart
+<a id="__codelineno-50-20" name="__codelineno-50-20" href="#__codelineno-50-20"></a>    │   ├── screens/
+<a id="__codelineno-50-21" name="__codelineno-50-21" href="#__codelineno-50-21"></a>    │   │   ├── campaign_details/
+<a id="__codelineno-50-22" name="__codelineno-50-22" href="#__codelineno-50-22"></a>    │   │   │   └── campaign_details.dart
+<a id="__codelineno-50-23" name="__codelineno-50-23" href="#__codelineno-50-23"></a>    │   │   ├── campaign_list/
+<a id="__codelineno-50-24" name="__codelineno-50-24" href="#__codelineno-50-24"></a>    │   │   │   └── campaign_list.dart
+<a id="__codelineno-50-25" name="__codelineno-50-25" href="#__codelineno-50-25"></a>    │   │   ├── demand_campaign_form/
+<a id="__codelineno-50-26" name="__codelineno-50-26" href="#__codelineno-50-26"></a>    │   │   │   └── demand_campaign.dart
+<a id="__codelineno-50-27" name="__codelineno-50-27" href="#__codelineno-50-27"></a>    │   │   ├── main/
+<a id="__codelineno-50-28" name="__codelineno-50-28" href="#__codelineno-50-28"></a>    │   │   │   └── main_screen.dart
+<a id="__codelineno-50-29" name="__codelineno-50-29" href="#__codelineno-50-29"></a>    │   │   ├── notifications/
+<a id="__codelineno-50-30" name="__codelineno-50-30" href="#__codelineno-50-30"></a>    │   │   ├── agent-login.dart
+<a id="__codelineno-50-31" name="__codelineno-50-31" href="#__codelineno-50-31"></a>    │   │   ├── buyer-login.dart
+<a id="__codelineno-50-32" name="__codelineno-50-32" href="#__codelineno-50-32"></a>    │   │   ├── buyer-signup.dart
+<a id="__codelineno-50-33" name="__codelineno-50-33" href="#__codelineno-50-33"></a>    │   │   ├── homescreen.dart
+<a id="__codelineno-50-34" name="__codelineno-50-34" href="#__codelineno-50-34"></a>    │   │   ├── market_price_screen.dart
+<a id="__codelineno-50-35" name="__codelineno-50-35" href="#__codelineno-50-35"></a>    │   │   ├── profile_screen.dart
+<a id="__codelineno-50-36" name="__codelineno-50-36" href="#__codelineno-50-36"></a>    │   │   └── splash_screen.dart
+<a id="__codelineno-50-37" name="__codelineno-50-37" href="#__codelineno-50-37"></a>    │   ├── services/
+<a id="__codelineno-50-38" name="__codelineno-50-38" href="#__codelineno-50-38"></a>    │   │   └── api_service.dart
+<a id="__codelineno-50-39" name="__codelineno-50-39" href="#__codelineno-50-39"></a>    │   ├── widgets/
+<a id="__codelineno-50-40" name="__codelineno-50-40" href="#__codelineno-50-40"></a>    │   │   ├── bottom_nav.dart
+<a id="__codelineno-50-41" name="__codelineno-50-41" href="#__codelineno-50-41"></a>    │   │   ├── pamodzi_header.dart
+<a id="__codelineno-50-42" name="__codelineno-50-42" href="#__codelineno-50-42"></a>    │   │   └── status_badge.dart
+<a id="__codelineno-50-43" name="__codelineno-50-43" href="#__codelineno-50-43"></a>    │   └── main.dart
+<a id="__codelineno-50-44" name="__codelineno-50-44" href="#__codelineno-50-44"></a>    ├── .gitignore
+<a id="__codelineno-50-45" name="__codelineno-50-45" href="#__codelineno-50-45"></a>    ├── analysis_options.yaml
+<a id="__codelineno-50-46" name="__codelineno-50-46" href="#__codelineno-50-46"></a>    ├── pubspec.yaml
+<a id="__codelineno-50-47" name="__codelineno-50-47" href="#__codelineno-50-47"></a>    ├── pubspec.lock
+<a id="__codelineno-50-48" name="__codelineno-50-48" href="#__codelineno-50-48"></a>    └── README.md
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../frontend_web/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Frontend Web">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Frontend Web
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.instant", "navigation.tracking", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "toc.follow", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+    
+  </body>
+</html>
