@@ -169,27 +169,11 @@ libs/
 ---
 
 
-<!-- ### 8. Screens in detail
 
-A closer look at the three screens most people touch first:
 
-**Home**
+## 8. Code Snippets — Common Patterns
 
-Live counts (cooperatives, buyers, farmers, campaigns, listings), escrow/phase status chips, an active-campaigns table with per-row refund/extend actions, an activity feed, and a 30-day aggregation trend chart.
-
-**Onboard User**
-
-Single form, three roles via radio select — Cooperative, Cooperative Agent, Admin — routing to `POST /cooperatives/`, `POST /cooperative-agents/onboard`, or `POST /auth/admin/onboard` depending on which is picked.
-
-**Market Price**
-
-Per-crop price cards (ZMW/50kg) above a multi-line trend chart with a color-coded legend — sourced from `GET /market-prices/current` and `/market-prices/history`.
-
---- -->
-
-## 9. Code Snippets — Common Patterns
-
-### 9.1 The dashboard shell (`layout.jsx`)
+### 8.1 The dashboard shell (`layout.jsx`)
 
 Every route nested under `app/dashboard/` gets wrapped by this layout.
 
@@ -214,7 +198,7 @@ export default function DashboardLayout({ children }) {
 
 If you build a new page *outside* `app/dashboard/` (like `Home` or `login`) it will **not** get this shell automatically — that's why `/login` and `/Home` have their own standalone styling. Decide early whether a new screen belongs inside the admin shell or not.
 
-### 9.2 A new dashboard page
+### 8.2 A new dashboard page
 
 ```jsx
 
@@ -230,7 +214,7 @@ export default function ExampleFeaturePage() {
 }
 ```
 
-### 9.3 Fetching from the backend
+### 8.3 Fetching from the backend
 
 ```js
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
@@ -277,7 +261,7 @@ export default function MarketPriceWidget() {
 }
 ```
 
-### 9.4 A dynamic route (`FinanceCards/[id]`)
+### 8.4 A dynamic route (`FinanceCards/[id]`)
 
 ```jsx
 import { apiGet } from "@/lib/api";
@@ -299,7 +283,7 @@ export default async function FinanceCardPage({ params }) {
 
 Note `params` is a `Promise` you have to `await` in current Next.js — a common mistake porting patterns from older Next.js tutorials is treating `params` as a plain object.
 
-### 9.5 A chart with recharts (matches `MarketPricesDashboard.jsx`)
+### 8.5 A chart with recharts (matches `MarketPricesDashboard.jsx`)
 
 ```jsx
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
@@ -318,7 +302,7 @@ export default function PriceTrendChart({ data }) {
 }
 ```
 
-### 9.6 Using an existing icon
+### 8.6 Using an existing icon
 
 ```jsx
 import { LeafIcon } from "@/components/dashboard/icons";
@@ -332,7 +316,7 @@ Add new icons to `icons.jsx` rather than pulling in an icon library — that's t
 
 ---
 
-## 10. Deployment (Vercel)
+## 9. Deployment (Vercel)
 
 The frontend deploys to **Vercel**, connected to the `Phoenix_Dashboard` repo, and serves from `phoenixdashboard.vercel.app`.
 
@@ -350,7 +334,7 @@ The frontend deploys to **Vercel**, connected to the `Phoenix_Dashboard` repo, a
 
 ---
 
-## 11. Troubleshooting
+## 10. Troubleshooting
 
 | Symptom | Likely cause | Check |
 |---|---|---|
